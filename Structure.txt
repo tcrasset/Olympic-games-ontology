@@ -1,0 +1,37 @@
+- Olympyc Game
+	- Winter
+	- Summer
+
+
+- Sport_Competition
+	- Round (tennis)
+
+	- Multi-round Competition (tennis)
+		- 
+	- Multi-discipline Competition (triathlon)
+		-
+	- Multi-stage Competition (foot)
+		-
+	- UnitCompetition (100m race)
+		-
+
+
+- Sport
+	- Ball sport
+		- Tennis
+		- Badminton
+		- ...
+	- Combat Sport
+		- Boxing
+		- Judo
+		- ...
+	-...
+
+
+- Athtlete a foaf:Person
+	- Sport
+	- ...
+
+
+
+

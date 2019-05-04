@@ -8,4 +8,324 @@
 
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games> rdf:type owl:Ontology .
 
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       owl:inverseOf :isHostedAt ;
+       rdf:type owl:TransitiveProperty ;
+       rdfs:domain :OlympicGame ;
+       rdfs:range :SportCompetition .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostedAt
+:isHostedAt rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
+:isPlayedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf :plays .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#partOf
+:partOf rdf:type owl:ObjectProperty ,
+                 owl:TransitiveProperty .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#plays
+:plays rdf:type owl:ObjectProperty ;
+       rdfs:domain :Athlete ;
+       rdfs:range :Sport .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Athlete ;
+     rdfs:range xsd:int ;
+     rdfs:comment """Age of a person in years.
+Example: 32""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#equipment
+:equipment rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Sport ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#firstname
+:firstname rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Athlete ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Firstname of a person." .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#gender
+:gender rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Athlete ;
+        rdfs:range xsd:string ;
+        rdfs:comment """Gender of a person.
+Example: \"male\" or \"female\"""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#height
+:height rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Athlete ;
+        rdfs:range xsd:int ;
+        rdfs:comment """Height of a person in cm.
+Example: 190""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#sportName
+:sportName rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Sport ;
+           rdfs:range xsd:string ;
+           rdfs:comment """Name of the sport.
+Example: \"Tennis\"""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#surname
+:surname rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Athlete ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Surname of a person." .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#weight
+:weight rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Athlete ;
+        rdfs:range xsd:int ;
+        rdfs:comment """Weight of a person in kg.
+Example: 85""" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete
+:Athlete rdf:type owl:Class ;
+         rdfs:comment """An athlete is a person who practices some sport(s).
+Example: the tennis player Rafael Nadal.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport
+:AthleticsSport rdf:type owl:Class ;
+                rdfs:subClassOf :Sport ;
+                rdfs:comment "" ,
+                             """Athletics sport is the sport of competing in track and field events, including running races and various competitions in jumping and throwing.
+Example: 100M, 400M, Hammer Throw, High Jump.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport
+:BallSport rdf:type owl:Class ;
+           rdfs:subClassOf :Sport ;
+           rdfs:comment """A ball sport is any form of sport which feature a ball as part of play.
+Example: football, cricket, baseball, basketball.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport
+:CombatSport rdf:type owl:Class ;
+             rdfs:subClassOf :Sport ;
+             rdfs:comment """A combat sport is a competitive contact sport that usually involves one-on-one combat.
+Example:  boxing, wrestling, fencing, savate.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition
+:MultiDisciplineCompetition rdf:type owl:Class ;
+                            rdfs:subClassOf :SportCompetition ;
+                            rdfs:comment "" ,
+                                         """A competition that incorporates a number of different sports.
+Example: Athletics competition.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition
+:MultiRoundCompetition rdf:type owl:Class ;
+                       rdfs:subClassOf :SportCompetition ;
+                       rdfs:comment """A multi-round competition is a competition organised as a sequence of rounds.
+Example: the Wimbledon tennis tournament.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiSport
+:MultiSport rdf:type owl:Class ;
+            rdfs:subClassOf :Sport ;
+            rdfs:comment """A multisport is a sport in which athletes compete in multiple athletic disciplines.
+Example: Triathlon (running, swimming, cycling)""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition
+:MultiStageCompetition rdf:type owl:Class ;
+                       rdfs:subClassOf :SportCompetition ;
+                       rdfs:comment """A Multi-stage Competition is a competition that is organised as a set of stages.
+Example: the Football World Cup.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame
+:OlympicGame rdf:type owl:Class ;
+             rdfs:comment "The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions." .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
+:Round rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :partOf ;
+                         owl:allValuesFrom :MultiRoundCompetition
+                       ] ;
+       rdfs:comment """A round is one or more competitions that is part of a Multi-Round Competition.
+Example: first round of Wimbledon.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport
+:Sport rdf:type owl:Class ;
+       rdfs:comment "A sport is a phyisical activity in which an individual or team competes against another or others for entertainment." .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition
+:SportCompetition rdf:type owl:Class ;
+                  rdfs:comment "A sport competition is a competitive sporting event." .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame
+:SummerGame rdf:type owl:Class ;
+            rdfs:subClassOf :OlympicGame ;
+            rdfs:comment "Summer Game is a kind of Olympic Game considering only summer sports." .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition
+:UnitCompetition rdf:type owl:Class ;
+                 rdfs:subClassOf :SportCompetition ;
+                 rdfs:comment """A unit competition is the unit of competition defined by a competition discipline rules. 
+Example: a tennis match or a 100m race.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport
+:WaterSport rdf:type owl:Class ;
+            rdfs:subClassOf :Sport ;
+            rdfs:comment """A water sport is a sport happening or involving water.
+Example: kanoe, sailing, diving""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WinterGame
+:WinterGame rdf:type owl:Class ;
+            rdfs:subClassOf :OlympicGame ;
+            rdfs:comment "Winter Game is a kind of Olympic Game considering only winter sports." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Biathlon
+:Biathlon rdf:type owl:NamedIndividual ,
+                   :MultiSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Bolt
+:Bolt rdf:type owl:NamedIndividual ,
+               :Athlete ;
+      :age "32"^^xsd:int ;
+      :firstname "Usain"^^xsd:string ;
+      :gender "Male"^^xsd:string ;
+      :height "195"^^xsd:int ;
+      :surname "Bolt"^^xsd:string ;
+      :weight "94"^^xsd:int .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Boxing
+:Boxing rdf:type owl:NamedIndividual ,
+                 :CombatSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Diving
+:Diving rdf:type owl:NamedIndividual ,
+                 :WaterSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Football
+:Football rdf:type owl:NamedIndividual ,
+                   :BallSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HammerThrow
+:HammerThrow rdf:type owl:NamedIndividual ,
+                      :AthleticsSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HighJump
+:HighJump rdf:type owl:NamedIndividual ,
+                   :AthleticsSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Judo
+:Judo rdf:type owl:NamedIndividual ,
+               :CombatSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Swimming
+:Swimming rdf:type owl:NamedIndividual ,
+                   :WaterSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Taekwondo
+:Taekwondo rdf:type owl:NamedIndividual ,
+                    :CombatSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis
+:Tennis rdf:type owl:NamedIndividual ,
+                 :BallSport ;
+        :equipment "Racket"^^xsd:string ;
+        :sportName "Tennis"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Triathlon
+:Triathlon rdf:type owl:NamedIndividual ,
+                    :MultiSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Volleyball
+:Volleyball rdf:type owl:NamedIndividual ,
+                     :BallSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo
+:Waterpolo rdf:type owl:NamedIndividual ,
+                    :WaterSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> rdf:type owl:NamedIndividual ,
+                                                                                        :AthleticsSport .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Biathlon
+                        :Bolt
+                        :Boxing
+                        :Diving
+                        :Football
+                        :HammerThrow
+                        :HighJump
+                        :Judo
+                        :Swimming
+                        :Taekwondo
+                        :Tennis
+                        :Triathlon
+                        :Volleyball
+                        :Waterpolo
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M>
+                      )
+] .
+
+
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

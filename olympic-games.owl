@@ -30,6 +30,10 @@
           rdfs:range :Round .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport
+:hasSport rdf:type owl:ObjectProperty .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage
 :hasStage rdf:type owl:ObjectProperty ;
           owl:inverseOf :isStageIn ;
@@ -159,6 +163,10 @@ Example: 85""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete
 :Athlete rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :plays ;
+                           owl:someValuesFrom :Sport
+                         ] ;
          rdfs:comment """An athlete is a person who practices some sport(s).
 Example: the tennis player Rafael Nadal.""" .
 
@@ -200,14 +208,24 @@ Example:  boxing, wrestling, fencing, savate.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition
 :MultiDisciplineCompetition rdf:type owl:Class ;
-                            rdfs:subClassOf :SportCompetition ;
-                            rdfs:comment """A competition that incorporates a number of different sports.
+                            rdfs:subClassOf :SportCompetition ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasSport ;
+                                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                              owl:onClass :Sport
+                                            ] ;
+                            rdfs:comment """A competition that incorporates a number of different sports, that is at least 2.
 Example: Athletics competition.""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition
 :MultiRoundCompetition rdf:type owl:Class ;
-                       rdfs:subClassOf :SportCompetition ;
+                       rdfs:subClassOf :SportCompetition ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasRound ;
+                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :Round
+                                       ] ;
                        rdfs:comment """A multi-round competition is a competition organised as a sequence of rounds where the winner advances and the loser gets eliminated.
 Example: the Wimbledon tennis tournament.""" .
 
@@ -221,13 +239,22 @@ Example: Triathlon (running, swimming, cycling)""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition
 :MultiStageCompetition rdf:type owl:Class ;
-                       rdfs:subClassOf :SportCompetition ;
+                       rdfs:subClassOf :SportCompetition ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasStage ;
+                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                         owl:onClass :Stage
+                                       ] ;
                        rdfs:comment """A Multi-stage Competition is a competition that is organised as a set of stages.
 Example: the Football World Cup.""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame
 :OlympicGame rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :isHostOf ;
+                               owl:someValuesFrom :SportCompetition
+                             ] ;
              rdfs:comment "The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions." .
 
 
@@ -249,6 +276,10 @@ Example: first round of Wimbledon.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition
 :SportCompetition rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasSport ;
+                                    owl:someValuesFrom :Sport
+                                  ] ;
                   rdfs:comment "A sport competition is a competitive sporting event." .
 
 

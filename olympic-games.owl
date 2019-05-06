@@ -12,21 +12,15 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#competesIn
-:competesIn rdf:type owl:ObjectProperty ;
-            owl:inverseOf :hasCompetitor ;
-            rdfs:domain [ rdf:type owl:Restriction ;
-                          owl:onProperty :competesIn ;
-                          owl:someValuesFrom :Athlete
-                        ] ;
-            rdfs:range [ rdf:type owl:Restriction ;
-                         owl:onProperty :competesIn ;
-                         owl:someValuesFrom :SportCompetition
-                       ] .
-
-
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor
-:hasCompetitor rdf:type owl:ObjectProperty .
+:hasCompetitor rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isCompetitorIn .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost
+:hasHost rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isHostOf ;
+         rdf:type owl:TransitiveProperty .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
@@ -43,17 +37,23 @@
           rdfs:range :Stage .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hosts
-:hosts rdf:type owl:ObjectProperty ;
-       owl:inverseOf :isHostedAt ;
-       rdf:type owl:TransitiveProperty ;
-       rdfs:domain :OlympicGame ;
-       rdfs:range :SportCompetition .
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
+:isCompetitorIn rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Restriction ;
+                              owl:onProperty :isCompetitorIn ;
+                              owl:someValuesFrom :Athlete
+                            ] ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty :isCompetitorIn ;
+                             owl:someValuesFrom :SportCompetition
+                           ] .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostedAt
-:isHostedAt rdf:type owl:ObjectProperty ,
-                     owl:TransitiveProperty .
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf
+:isHostOf rdf:type owl:ObjectProperty ,
+                   owl:TransitiveProperty ;
+          rdfs:domain :OlympicGame ;
+          rdfs:range :SportCompetition .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
@@ -261,6 +261,7 @@ Example: pooling stage of Football World Cup""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame
 :SummerGame rdf:type owl:Class ;
             rdfs:subClassOf :OlympicGame ;
+            owl:disjointWith :WinterGame ;
             rdfs:comment """Summer Game is a kind of Olympic Game consisting only of 
 summer sports.""" .
 
@@ -382,17 +383,24 @@ Example: kanoe, sailing, diving""" .
                 :OlympicGame
                 :Round
                 :Sport
+                :SportCompetition
                 :Stage
               )
 ] .
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Athlete
-                :Medal
-                :OlympicGame
-                :Sport
-                :SportCompetition
+  owl:members ( :BronzeMedal
+                :GoldMedal
+                :SilverMedal
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :MultiDisciplineCompetition
+                :MultiRoundCompetition
+                :MultiStageCompetition
               )
 ] .
 

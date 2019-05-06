@@ -14,6 +14,7 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#competesIn
 :competesIn rdf:type owl:ObjectProperty ;
+            owl:inverseOf :hasCompetitor ;
             rdfs:domain [ rdf:type owl:Restriction ;
                           owl:onProperty :competesIn ;
                           owl:someValuesFrom :Athlete
@@ -22,6 +23,24 @@
                          owl:onProperty :competesIn ;
                          owl:someValuesFrom :SportCompetition
                        ] .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor
+:hasCompetitor rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
+:hasRound rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isRoundIn ;
+          rdfs:domain :MultiRoundCompetition ;
+          rdfs:range :Round .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage
+:hasStage rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isStageIn ;
+          rdfs:domain :MultiStageCompetition ;
+          rdfs:range :Stage .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hosts
@@ -42,9 +61,26 @@
             owl:inverseOf :plays .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#partOf
-:partOf rdf:type owl:ObjectProperty ,
-                 owl:TransitiveProperty .
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundIn
+:isRoundIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageIn
+:isStageIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isWonBy
+:isWonBy rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Restriction ;
+                       owl:onProperty :isWonBy ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :SportCompetition
+                     ] ;
+         rdfs:range [ rdf:type owl:Restriction ;
+                      owl:onProperty :isWonBy ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Athlete
+                    ] .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#plays
@@ -141,11 +177,25 @@ Example: 100M, 400M, Hammer Throw, High Jump.""" .
 Example: football, cricket, baseball, basketball.""" .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BronzeMedal
+:BronzeMedal rdf:type owl:Class ;
+             rdfs:subClassOf :Medal .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport
 :CombatSport rdf:type owl:Class ;
              rdfs:subClassOf :Sport ;
              rdfs:comment """A combat sport is a competitive contact sport that usually involves one-on-one combat.
 Example:  boxing, wrestling, fencing, savate.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GoldMedal
+:GoldMedal rdf:type owl:Class ;
+           rdfs:subClassOf :Medal .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Medal
+:Medal rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition
@@ -183,12 +233,13 @@ Example: the Football World Cup.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
 :Round rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :partOf ;
-                         owl:allValuesFrom :MultiRoundCompetition
-                       ] ;
        rdfs:comment """A round is one or more competitions that is part of a Multi-Round Competition.
 Example: first round of Wimbledon.""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SilverMedal
+:SilverMedal rdf:type owl:Class ;
+             rdfs:subClassOf :Medal .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport
@@ -203,10 +254,6 @@ Example: first round of Wimbledon.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage
 :Stage rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :partOf ;
-                         owl:allValuesFrom :MultiStageCompetition
-                       ] ;
        rdfs:comment """A stage is one or more competitions part of a MultiStageCompetition where the N best teams/players only advance in the competition.
 Example: pooling stage of Football World Cup""" .
 
@@ -220,15 +267,7 @@ summer sports.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition
 :UnitCompetition rdf:type owl:Class ;
-                 rdfs:subClassOf :SportCompetition ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :partOf ;
-                                   owl:someValuesFrom :Round
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :partOf ;
-                                   owl:someValuesFrom :Stage
-                                 ] ;
+                 rdfs:subClassOf :SportCompetition ;
                  rdfs:comment """A unit competition is the unit of competition defined by a competition discipline rules. 
 Example: a tennis match or a 100m race.""" .
 
@@ -336,6 +375,27 @@ Example: kanoe, sailing, diving""" .
 #################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Athlete
+                :Medal
+                :OlympicGame
+                :Round
+                :Sport
+                :Stage
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Athlete
+                :Medal
+                :OlympicGame
+                :Sport
+                :SportCompetition
+              )
+] .
+
 
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :Biathlon

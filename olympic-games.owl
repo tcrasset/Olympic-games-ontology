@@ -41,6 +41,11 @@
           rdfs:range :Stage .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasUnitCompetition
+:hasUnitCompetition rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :isUnitCompetitionOf .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
 :isCompetitorIn rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Restriction ;
@@ -71,6 +76,10 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageIn
 :isStageIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isUnitCompetitionOf
+:isUnitCompetitionOf rdf:type owl:ObjectProperty .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isWonBy
@@ -260,6 +269,14 @@ Example: the Football World Cup.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
 :Round rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasUnitCompetition ;
+                         owl:someValuesFrom :UnitCompetition
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isRoundIn ;
+                         owl:someValuesFrom :MultiRoundCompetition
+                       ] ;
        rdfs:comment """A round is one or more competitions that is part of a Multi-Round Competition.
 Example: first round of Wimbledon.""" .
 
@@ -285,6 +302,14 @@ Example: first round of Wimbledon.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage
 :Stage rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasUnitCompetition ;
+                         owl:someValuesFrom :UnitCompetition
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isStageIn ;
+                         owl:someValuesFrom :MultiStageCompetition
+                       ] ;
        rdfs:comment """A stage is one or more competitions part of a MultiStageCompetition where the N best teams/players only advance in the competition.
 Example: pooling stage of Football World Cup""" .
 
@@ -432,6 +457,7 @@ Example: kanoe, sailing, diving""" .
   owl:members ( :MultiDisciplineCompetition
                 :MultiRoundCompetition
                 :MultiStageCompetition
+                :UnitCompetition
               )
 ] .
 

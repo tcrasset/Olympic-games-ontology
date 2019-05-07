@@ -14,36 +14,42 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor
 :hasCompetitor rdf:type owl:ObjectProperty ;
-               owl:inverseOf :isCompetitorIn .
+               owl:inverseOf :isCompetitorIn ;
+               rdfs:comment "A SportCompetition has Athletes that compete in it." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost
 :hasHost rdf:type owl:ObjectProperty ;
          owl:inverseOf :isHostOf ;
-         rdf:type owl:TransitiveProperty .
+         rdf:type owl:TransitiveProperty ;
+         rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
 :hasRound rdf:type owl:ObjectProperty ;
           owl:inverseOf :isRoundIn ;
           rdfs:domain :MultiRoundCompetition ;
-          rdfs:range :Round .
+          rdfs:range :Round ;
+          rdfs:comment "A MultiRoundCompetition has Rounds that are played as part of it" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport
-:hasSport rdf:type owl:ObjectProperty .
+:hasSport rdf:type owl:ObjectProperty ;
+          rdfs:comment "A SportCompetition has a Sport that is played in that competition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage
 :hasStage rdf:type owl:ObjectProperty ;
           owl:inverseOf :isStageIn ;
           rdfs:domain :MultiStageCompetition ;
-          rdfs:range :Stage .
+          rdfs:range :Stage ;
+          rdfs:comment "A MultiStageCompetition has instances of Stage as competition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasUnitCompetition
 :hasUnitCompetition rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :isUnitCompetitionOf .
+                    owl:inverseOf :isUnitCompetitionOf ;
+                    rdfs:comment "A Round or a Stage has UnitCompetitions as part of it." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
@@ -55,51 +61,49 @@
                 rdfs:range [ rdf:type owl:Restriction ;
                              owl:onProperty :isCompetitorIn ;
                              owl:someValuesFrom :SportCompetition
-                           ] .
+                           ] ;
+                rdfs:comment "An Athlete competes in a kind of SportCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf
 :isHostOf rdf:type owl:ObjectProperty ,
                    owl:TransitiveProperty ;
           rdfs:domain :OlympicGame ;
-          rdfs:range :SportCompetition .
+          rdfs:range :SportCompetition ;
+          rdfs:comment "An OlympicGame is host to a kind of SportCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
 :isPlayedBy rdf:type owl:ObjectProperty ;
-            owl:inverseOf :plays .
+            owl:inverseOf :plays ;
+            rdfs:comment "A Sport is played by an Athlete" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundIn
-:isRoundIn rdf:type owl:ObjectProperty .
+:isRoundIn rdf:type owl:ObjectProperty ;
+           rdfs:comment "A round is part of a MultiRoundCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageIn
-:isStageIn rdf:type owl:ObjectProperty .
+:isStageIn rdf:type owl:ObjectProperty ;
+           rdfs:comment "A stage is part of a MultiStageCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isUnitCompetitionOf
-:isUnitCompetitionOf rdf:type owl:ObjectProperty .
+:isUnitCompetitionOf rdf:type owl:ObjectProperty ;
+                     rdfs:comment "A UnitCompetition belongs to a Stage, a Round or is by itself." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isWonBy
 :isWonBy rdf:type owl:ObjectProperty ;
-         rdfs:domain [ rdf:type owl:Restriction ;
-                       owl:onProperty :isWonBy ;
-                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onClass :SportCompetition
-                     ] ;
-         rdfs:range [ rdf:type owl:Restriction ;
-                      owl:onProperty :isWonBy ;
-                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                      owl:onClass :Athlete
-                    ] .
+         rdfs:comment "A SportCompetition is won by an Athlete and is awarded a Medal." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#plays
 :plays rdf:type owl:ObjectProperty ;
        rdfs:domain :Athlete ;
-       rdfs:range :Sport .
+       rdfs:range :Sport ;
+       rdfs:comment "An Athlete plays a Sport" .
 
 
 #################################################################
@@ -196,7 +200,8 @@ Example: football, cricket, baseball, basketball.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BronzeMedal
 :BronzeMedal rdf:type owl:Class ;
-             rdfs:subClassOf :Medal .
+             rdfs:subClassOf :Medal ;
+             rdfs:comment "A BronzeMedal is awarded to the player that is placed at the 3rd place at the end of a SportCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport
@@ -208,11 +213,13 @@ Example:  boxing, wrestling, fencing, savate.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GoldMedal
 :GoldMedal rdf:type owl:Class ;
-           rdfs:subClassOf :Medal .
+           rdfs:subClassOf :Medal ;
+           rdfs:comment "A GoldMedal is awarded to the player that is placed at the 1st place at the end of a SportCompetition." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Medal
-:Medal rdf:type owl:Class .
+:Medal rdf:type owl:Class ;
+       rdfs:comment "A Medal is won at the end of each competition." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition
@@ -283,7 +290,8 @@ Example: first round of Wimbledon.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SilverMedal
 :SilverMedal rdf:type owl:Class ;
-             rdfs:subClassOf :Medal .
+             rdfs:subClassOf :Medal ;
+             rdfs:comment "A SilverMedal is awarded to the player that is placed at the 2nd place at the end of a SportCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport
@@ -294,6 +302,14 @@ Example: first round of Wimbledon.""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition
 :SportCompetition rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasCompetitor ;
+                                    owl:someValuesFrom :Athlete
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasHost ;
+                                    owl:someValuesFrom :OlympicGame
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty :hasSport ;
                                     owl:someValuesFrom :Sport
                                   ] ;

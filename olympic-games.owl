@@ -39,13 +39,6 @@
                rdfs:comment "A SportCompetition has Athletes that compete in it." .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost
-:hasHost rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isHostOf ;
-         rdf:type owl:TransitiveProperty ;
-         rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
-
-
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
 :hasRound rdf:type owl:ObjectProperty ;
           owl:inverseOf :isRoundIn ;
@@ -73,6 +66,15 @@
                     rdfs:comment "A Round or a Stage has UnitCompetitions as part of it." .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       owl:inverseOf :isHostedBy ;
+       rdf:type owl:TransitiveProperty ;
+       rdfs:domain :OlympicGame ;
+       rdfs:range :SportCompetition ;
+       rdfs:comment "An OlympicGame hosts a kind of SportCompetition" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
 :isCompetitorIn rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Restriction ;
@@ -86,6 +88,7 @@
                 rdfs:comment "An Athlete competes in a kind of SportCompetition" .
 
 
+<<<<<<< HEAD
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf
 :isFirstPlaceWinnerOf rdf:type owl:ObjectProperty ;
                       rdfs:comment "An Athlete wins first place in a SportCompetition." .
@@ -97,6 +100,12 @@
           rdfs:domain :OlympicGame ;
           rdfs:range :SportCompetition ;
           rdfs:comment "An OlympicGame is host to a kind of SportCompetition" .
+=======
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostedBy
+:isHostedBy rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty ;
+            rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
+>>>>>>> 1a4b01eff119263bfec42d6f8ecdbac46ce4d58b
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
@@ -283,7 +292,7 @@ Example: the Football World Cup.""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame
 :OlympicGame rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :isHostOf ;
+                               owl:onProperty :hosts ;
                                owl:someValuesFrom :SportCompetition
                              ] ;
              rdfs:comment "The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions." .
@@ -315,12 +324,12 @@ Example: first round of Wimbledon.""" .
                                     owl:someValuesFrom :Athlete
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasHost ;
-                                    owl:someValuesFrom :OlympicGame
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty :hasSport ;
                                     owl:someValuesFrom :Sport
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isHostedBy ;
+                                    owl:someValuesFrom :OlympicGame
                                   ] ;
                   rdfs:comment "A sport competition is a competitive sporting event." .
 

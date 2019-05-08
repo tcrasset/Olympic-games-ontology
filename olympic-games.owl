@@ -61,7 +61,9 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSportCompetition
 :hasSportCompetition rdf:type owl:ObjectProperty ;
-                     owl:inverseOf :isSportCompetitionOf .
+                     owl:inverseOf :isSportCompetitionOf ;
+                     rdfs:comment """An OlympicGame has a SportCompetition as an event
+Example: Men's Singles Tennis XXX Olympiad""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage
@@ -122,7 +124,9 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportCompetitionOf
 :isSportCompetitionOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf owl:topObjectProperty .
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:comment """A SportCompetition is part of an OlympicGame
+Example: Sochi2014""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf
@@ -698,9 +702,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 #    Annotations
 #################################################################
 
-:playsSport rdfs:comment """Name of the sport.
-Example: \"Tennis\"""" ,
-                         "An Athlete plays a Sport" .
+:playsSport rdfs:comment "An Athlete plays a Sport" .
 
 
 #################################################################

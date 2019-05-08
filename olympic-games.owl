@@ -733,16 +733,19 @@ Example: \"Tennis\"""" ,
 
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :Biathlon
+  owl:distinctMembers ( :AndyMurray
+                        :Biathlon
                         :Boxing
                         :Diving
                         :Football
                         :HammerThrow
                         :HighJump
                         :Judo
+                        :London2012
                         :MichaelPhelps
                         :RafaelNadal
                         :RioDeJaneiro2016
+                        :Sochi2014
                         :Swimming
                         :Taekwondo
                         :Tennis
@@ -751,28 +754,23 @@ Example: \"Tennis\"""" ,
                         :Volleyball
                         :Waterpolo
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad>
-                      )
-] .
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :Biathlon
-                        :Boxing
-                        :Diving
-                        :Football
-                        :HammerThrow
-                        :HighJump
-                        :Judo
-                        :RioDeJaneiro2016
-                        :Swimming
-                        :Taekwondo
-                        :Tennis
-                        :Triathlon
-                        :UsainBolt
-                        :Volleyball
-                        :Waterpolo
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_64_Round>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round>
                       )
 ] .
 

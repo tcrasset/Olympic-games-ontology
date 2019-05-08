@@ -16,6 +16,8 @@
 :hasAwardedFirstPlaceTo rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf owl:topObjectProperty ;
                         owl:inverseOf :isFirstPlaceWinnerOf ;
+                        rdfs:domain :SportCompetition ;
+                        rdfs:range :Athlete ;
                         rdfs:comment "A SportCompetition has awarded an Athlete the title of first place." .
 
 
@@ -23,6 +25,8 @@
 :hasAwardedSecondPlaceTo rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf owl:topObjectProperty ;
                          owl:inverseOf :isSecondPlaceWinnerOf ;
+                         rdfs:domain :SportCompetition ;
+                         rdfs:range :Athlete ;
                          rdfs:comment "A SportCompetition has awarded an Athlete the title of first place." .
 
 
@@ -30,12 +34,16 @@
 :hasAwardedThirdPlaceTo rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf owl:topObjectProperty ;
                         owl:inverseOf :isThirdPlaceWinnerOf ;
+                        rdfs:domain :SportCompetition ;
+                        rdfs:range :Athlete ;
                         rdfs:comment "A SportCompetition has awarded an Athlete the title of third place." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor
 :hasCompetitor rdf:type owl:ObjectProperty ;
                owl:inverseOf :isCompetitorIn ;
+               rdfs:domain :SportCompetition ;
+               rdfs:range :Athlete ;
                rdfs:comment "A SportCompetition has Athletes that compete in it." .
 
 
@@ -43,6 +51,8 @@
 :hasHost rdf:type owl:ObjectProperty ;
          owl:inverseOf :isHostOf ;
          rdf:type owl:TransitiveProperty ;
+         rdfs:domain :SportCompetition ;
+         rdfs:range :OlympicGame ;
          rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
 
 
@@ -56,12 +66,18 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport
 :hasSport rdf:type owl:ObjectProperty ;
-          rdfs:comment "A SportCompetition has a Sport that is played in that competition" .
+          owl:inverseOf :isSportOf ;
+          rdfs:domain :SportCompetition ;
+          rdfs:range :Sport ;
+          rdfs:comment """A SportCompetition has a Sport that is played in that competition
+Ex: Tennis""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSportCompetition
 :hasSportCompetition rdf:type owl:ObjectProperty ;
                      owl:inverseOf :isSportCompetitionOf ;
+                     rdfs:domain :OlympicGame ;
+                     rdfs:range :SportCompetition ;
                      rdfs:comment """An OlympicGame has a SportCompetition as an event
 Example: Men's Singles Tennis XXX Olympiad""" .
 
@@ -95,6 +111,8 @@ Example: Men's Singles Tennis XXX Olympiad""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf
 :isFirstPlaceWinnerOf rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Athlete ;
+                      rdfs:range :SportCompetition ;
                       rdfs:comment "An Athlete wins first place in a SportCompetition." .
 
 
@@ -109,34 +127,54 @@ Example: Men's Singles Tennis XXX Olympiad""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
 :isPlayedBy rdf:type owl:ObjectProperty ;
             owl:inverseOf :playsSport ;
+            rdfs:domain :Sport ;
+            rdfs:range :Athlete ;
             rdfs:comment "A Sport is played by an Athlete" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundIn
 :isRoundIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Round ;
+           rdfs:range :MultiRoundCompetition ;
            rdfs:comment "A round is part of a MultiRoundCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSecondPlaceWinnerOf
 :isSecondPlaceWinnerOf rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Athlete ;
+                       rdfs:range :SportCompetition ;
                        rdfs:comment "An Athlete wins second place in a SportCompetition." .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportCompetitionOf
 :isSportCompetitionOf rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :SportCompetition ;
+                      rdfs:range :OlympicGame ;
                       rdfs:comment """A SportCompetition is part of an OlympicGame
 Example: Sochi2014""" .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportOf
+:isSportOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :Sport ;
+           rdfs:range :SportCompetition ;
+           rdfs:comment """A Sport is played in a SportCompetition.
+Ex: Men's Singles Tennis XXX Olympiad.""" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf
 :isStageOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :Stage ;
+           rdfs:range :MultiStageCompetition ;
            rdfs:comment "A stage is part of a MultiStageCompetition" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isThirdPlaceWinnerOf
 :isThirdPlaceWinnerOf rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain :Athlete ;
+                      rdfs:range :SportCompetition ;
                       rdfs:comment "An Athlete wins third place in a SportCompetition." .
 
 

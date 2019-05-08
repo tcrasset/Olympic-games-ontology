@@ -597,6 +597,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> rdf:type owl:NamedIndividual ,
                                                                                                                               :MultiStageCompetition ;
                                                                                                                      :hasAwardedFirstPlaceTo :MichaelPhelps ;
+                                                                                                                     :hasSport :Swimming ;
                                                                                                                      :isSportCompetitionOf :London2012 .
 
 
@@ -628,6 +629,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> rdf:type owl:NamedIndividual ,
                                                                                                                 :MultiStageCompetition ;
                                                                                                        :hasAwardedFirstPlaceTo :UsainBolt ;
+                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> ;
                                                                                                        :isSportCompetitionOf :London2012 .
 
 
@@ -659,6 +661,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> rdf:type owl:NamedIndividual ,
                                                                                                                      :MultiRoundCompetition ;
                                                                                                             :hasAwardedFirstPlaceTo :AndyMurray ;
+                                                                                                            :hasSport :Tennis ;
                                                                                                             :isSportCompetitionOf :London2012 .
 
 

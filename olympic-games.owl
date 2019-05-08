@@ -479,6 +479,7 @@ Example: kanoe, sailing, diving""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray
 :AndyMurray rdf:type owl:NamedIndividual ;
+            :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> ;
             :playsSport :Tennis ;
             :hasBirthdate "1987-05-15T00:00:00"^^xsd:dateTime ;
             :hasFirstName "Andy"^^xsd:string ;
@@ -537,6 +538,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MichaelPhelps
 :MichaelPhelps rdf:type owl:NamedIndividual ,
                         :Athlete ;
+               :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> ;
                :playsSport :Swimming ;
                :hasBirthdate "1985-03-30T00:00:00"^^xsd:dateTime ;
                :hasFirstName "Michael"^^xsd:string ;
@@ -602,6 +604,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt
 :UsainBolt rdf:type owl:NamedIndividual ,
                     :Athlete ;
+           :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> ;
            :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> ;
            :hasBirthdate "1986-08-21T00:00:00"^^xsd:dateTime ;
            :hasFirstName "Usain"^^xsd:string ;

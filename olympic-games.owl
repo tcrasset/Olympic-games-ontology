@@ -143,8 +143,7 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport
 :playsSport rdf:type owl:ObjectProperty ;
-            rdfs:domain :Athlete ,
-                        :Sport ;
+            rdfs:domain :Athlete ;
             rdfs:range :Sport .
 
 
@@ -361,10 +360,6 @@ Example: the Football World Cup.""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
 :Round rdf:type owl:Class ;
        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasUnitCompetition ;
-                         owl:someValuesFrom :UnitCompetition
-                       ] ,
-                       [ rdf:type owl:Restriction ;
                          owl:onProperty :isRoundIn ;
                          owl:someValuesFrom :MultiRoundCompetition
                        ] ;

@@ -98,14 +98,8 @@ Example: Men's Singles Tennis XXX Olympiad""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
 :isCompetitorIn rdf:type owl:ObjectProperty ;
-                rdfs:domain [ rdf:type owl:Restriction ;
-                              owl:onProperty :isCompetitorIn ;
-                              owl:someValuesFrom :Athlete
-                            ] ;
-                rdfs:range [ rdf:type owl:Restriction ;
-                             owl:onProperty :isCompetitorIn ;
-                             owl:someValuesFrom :SportCompetition
-                           ] ;
+                rdfs:domain :Athlete ;
+                rdfs:range :SportCompetition ;
                 rdfs:comment "An Athlete competes in a kind of SportCompetition" .
 
 

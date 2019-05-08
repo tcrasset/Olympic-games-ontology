@@ -39,6 +39,13 @@
                rdfs:comment "A SportCompetition has Athletes that compete in it." .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost
+:hasHost rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isHostOf ;
+         rdf:type owl:TransitiveProperty ;
+         rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
 :hasRound rdf:type owl:ObjectProperty ;
           owl:inverseOf :isRoundIn ;
@@ -66,15 +73,6 @@
                     rdfs:comment "A Round or a Stage has UnitCompetitions as part of it." .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hosts
-:hosts rdf:type owl:ObjectProperty ;
-       owl:inverseOf :isHostedBy ;
-       rdf:type owl:TransitiveProperty ;
-       rdfs:domain :OlympicGame ;
-       rdfs:range :SportCompetition ;
-       rdfs:comment "An OlympicGame hosts a kind of SportCompetition" .
-
-
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
 :isCompetitorIn rdf:type owl:ObjectProperty ;
                 rdfs:domain [ rdf:type owl:Restriction ;
@@ -88,7 +86,6 @@
                 rdfs:comment "An Athlete competes in a kind of SportCompetition" .
 
 
-<<<<<<< HEAD
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf
 :isFirstPlaceWinnerOf rdf:type owl:ObjectProperty ;
                       rdfs:comment "An Athlete wins first place in a SportCompetition." .
@@ -100,12 +97,6 @@
           rdfs:domain :OlympicGame ;
           rdfs:range :SportCompetition ;
           rdfs:comment "An OlympicGame is host to a kind of SportCompetition" .
-=======
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostedBy
-:isHostedBy rdf:type owl:ObjectProperty ,
-                     owl:TransitiveProperty ;
-            rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
->>>>>>> 1a4b01eff119263bfec42d6f8ecdbac46ce4d58b
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
@@ -151,6 +142,13 @@
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#endsAtDate
+:endsAtDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :OlympicGame ;
+            rdfs:comment """Starting date of the Olympic game, in datetime format.
+Example: 2012-05-25T23:59:59""" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAge
 :hasAge rdf:type owl:DatatypeProperty ;
         rdfs:domain :Athlete ;
@@ -159,10 +157,18 @@
 Example: 32""" .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBudgetOf
+:hasBudgetOf rdf:type owl:DatatypeProperty ;
+             rdfs:domain :OlympicGame ;
+             rdfs:comment "Total spending for the organisation of the Olympic game" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasEquipment
 :hasEquipment rdf:type owl:DatatypeProperty ;
               rdfs:domain :Sport ;
-              rdfs:range xsd:string .
+              rdfs:range xsd:string ;
+              rdfs:comment """Equipment used for playing that particular Sport
+Example: racket and ball in Tennis""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasFirstName
@@ -180,6 +186,13 @@ Example: 32""" .
 Example: \"male\" or \"female\"""" .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGroupSetting
+:hasGroupSetting rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Sport ;
+                 rdfs:comment """Group setting of the sport, either 'individual' or 'collective'
+Example:  100M race is individual, football match is collective""" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHeight
 :hasHeight rdf:type owl:DatatypeProperty ;
            rdfs:domain :Athlete ;
@@ -195,6 +208,32 @@ Example: 190""" .
              rdfs:comment "Last name of a person." .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfPlayers
+:hasNumberOfPlayers rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Sport ;
+                    rdfs:comment """Number of players/competitors competing in a typical competition of that sport.
+Example: 22""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfVisitors
+:hasNumberOfVisitors rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :OlympicGame ;
+                     rdfs:comment "Number of visitors during the OlympicGames in the hosting city" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRecords
+:hasRecords rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Sport ;
+            rdfs:comment """The current record performances of that Sport
+Example: 100M race time by Usain Bolt at 9:58s""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRules
+:hasRules rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Sport ;
+          rdfs:comment "Rules of the given Sport" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasWeight
 :hasWeight rdf:type owl:DatatypeProperty ;
            rdfs:domain :Athlete ;
@@ -203,12 +242,26 @@ Example: 190""" .
 Example: 85""" .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedInCity
+:isPlayedInCity rdf:type owl:DatatypeProperty ;
+                rdfs:domain :OlympicGame ;
+                rdfs:comment """City in which the Olympic Games are held:
+Example: Rio de Janeiro in 2012""" .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport
 :playsSport rdf:type owl:DatatypeProperty ;
             rdfs:domain :Sport ;
             rdfs:range xsd:string ;
             rdfs:comment """Name of the sport.
 Example: \"Tennis\"""" .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#startsAtDate
+:startsAtDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :OlympicGame ;
+              rdfs:comment """Starting date of the Olympic game, in datetime format.
+Example: 2012-05-08T23:59:59""" .
 
 
 #################################################################
@@ -292,7 +345,7 @@ Example: the Football World Cup.""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame
 :OlympicGame rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :hosts ;
+                               owl:onProperty :isHostOf ;
                                owl:someValuesFrom :SportCompetition
                              ] ;
              rdfs:comment "The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions." .
@@ -324,12 +377,12 @@ Example: first round of Wimbledon.""" .
                                     owl:someValuesFrom :Athlete
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasSport ;
-                                    owl:someValuesFrom :Sport
+                                    owl:onProperty :hasHost ;
+                                    owl:someValuesFrom :OlympicGame
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty :isHostedBy ;
-                                    owl:someValuesFrom :OlympicGame
+                                    owl:onProperty :hasSport ;
+                                    owl:someValuesFrom :Sport
                                   ] ;
                   rdfs:comment "A sport competition is a competitive sporting event." .
 
@@ -388,6 +441,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Bolt
 :Bolt rdf:type owl:NamedIndividual ,
                :Athlete ;
+      :plays <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> ;
       :hasAge "32"^^xsd:int ;
       :hasFirstName "Usain"^^xsd:string ;
       :hasGender "Male"^^xsd:string ;
@@ -426,6 +480,16 @@ Example: kanoe, sailing, diving""" .
                :CombatSport .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RioDeJaneiro2016
+:RioDeJaneiro2016 rdf:type owl:NamedIndividual ,
+                           :SummerGame ;
+                  :endsAtDate "2012-08-21T23:59:59"^^xsd:dateTime ;
+                  :hasBudgetOf "13200000000"^^xsd:int ;
+                  :hasNumberOfVisitors "1170000"^^xsd:int ;
+                  :isPlayedInCity "Rio De Janeiro"^^xsd:string ;
+                  :startsAtDate "2012-08-05T00:00:00"^^xsd:dateTime .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Swimming
 :Swimming rdf:type owl:NamedIndividual ,
                    :WaterSport .
@@ -460,7 +524,16 @@ Example: kanoe, sailing, diving""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> rdf:type owl:NamedIndividual ,
-                                                                                        :AthleticsSport .
+                                                                                        :AthleticsSport ;
+                                                                               :hasGroupSetting "individual"^^xsd:string ;
+                                                                               :hasNumberOfPlayers "8"^^xsd:int ;
+                                                                               :hasRecords """Men: Usain Bolt 9.58s (2009)
+Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
+                                                                               :hasRules "The 100 metres, or 100-metre dash, is a sprint race in track and field competitions"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> rdf:type owl:NamedIndividual .
 
 
 #################################################################
@@ -496,6 +569,7 @@ Example: kanoe, sailing, diving""" .
                         :HammerThrow
                         :HighJump
                         :Judo
+                        :RioDeJaneiro2016
                         :Swimming
                         :Taekwondo
                         :Tennis

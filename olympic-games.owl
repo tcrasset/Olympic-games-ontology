@@ -194,6 +194,12 @@ Example: 2012-06-03T23:58:58""" .
              rdfs:comment "Total spending for the organisation of the Olympic game" .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitorGender
+:hasCompetitorGender rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :SportCompetition ;
+                     rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasEquipment
 :hasEquipment rdf:type owl:DatatypeProperty ;
               rdfs:domain :Sport ;
@@ -488,9 +494,9 @@ Example: kanoe, sailing, diving""" .
                    :MultiSport .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Boxing
-:Boxing rdf:type owl:NamedIndividual ,
-                 :CombatSport .
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BoxingMiddleweightWomen
+:BoxingMiddleweightWomen rdf:type owl:NamedIndividual ,
+                                  :CombatSport .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos
@@ -511,9 +517,27 @@ Example: kanoe, sailing, diving""" .
            :hasNationality "China"^^xsd:string .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ClaressaShields
+:ClaressaShields rdf:type owl:NamedIndividual ,
+                          :Athlete ;
+                 :playsSport :BoxingMiddleweightWomen ;
+                 :hasFirstName "Claressa"^^xsd:string ;
+                 :hasLastName "Shields"^^xsd:string ;
+                 :hasNationality "UnitedStates"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling
 :Cycling rdf:type owl:NamedIndividual ,
                   :Sport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#DarigaShakimova
+:DarigaShakimova rdf:type owl:NamedIndividual ,
+                          :Athlete ;
+                 :playsSport :BoxingMiddleweightWomen ;
+                 :hasFirstName "Dariga"^^xsd:string ;
+                 :hasLastName "Shakimova"^^xsd:string ;
+                 :hasNationality "Kazakhstan"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#DavidBoudia
@@ -580,6 +604,15 @@ Example: kanoe, sailing, diving""" .
                :CombatSport .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#LiQian
+:LiQian rdf:type owl:NamedIndividual ,
+                 :Athlete ;
+        :playsSport :BoxingMiddleweightWomen ;
+        :hasFirstName "Li"^^xsd:string ;
+        :hasLastName "Qian"^^xsd:string ;
+        :hasNationality "China"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012
 :London2012 rdf:type owl:NamedIndividual ,
                      :SummerGame ;
@@ -602,6 +635,15 @@ Example: kanoe, sailing, diving""" .
                :hasLastName "Phelps"^^xsd:string ;
                :hasNationality "UnitedStates"^^xsd:string ;
                :hasWeight "88"^^xsd:int .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#NouchkaFontijn
+:NouchkaFontijn rdf:type owl:NamedIndividual ,
+                         :Athlete ;
+                :playsSport :BoxingMiddleweightWomen ;
+                :hasFirstName "Nouchka"^^xsd:string ;
+                :hasLastName "Fontijn"^^xsd:string ;
+                :hasNationality "Netherlands"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RafaelNadal
@@ -730,7 +772,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                      :hasAwardedSecondPlaceTo :ChadLeCLos ;
                                                                                                                      :hasAwardedThirdPlaceTo :YevgenyKorotyshkin ;
                                                                                                                      :hasHost :London2012 ;
-                                                                                                                     :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> .
+                                                                                                                     :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
+                                                                                                                     :hasCompetitorGender "Male"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage
@@ -762,7 +805,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                 :MultiStageCompetition ;
                                                                                                        :hasAwardedFirstPlaceTo :UsainBolt ;
                                                                                                        :hasHost :London2012 ;
-                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> .
+                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
+                                                                                                       :hasCompetitorGender "Male"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage
@@ -796,7 +840,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                          :hasAwardedSecondPlaceTo :GermanSanchez ;
                                                                                                          :hasAwardedThirdPlaceTo :DavidBoudia ;
                                                                                                          :hasHost :RioDeJaneiro2016 ;
-                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> .
+                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
+                                                                                                         :hasCompetitorGender "Male"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad
@@ -805,7 +850,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                             :hasAwardedFirstPlaceTo :JasonKenny ;
                                                                                                             :hasAwardedSecondPlaceTo :GrégoryBaugé ;
                                                                                                             :hasAwardedThirdPlaceTo :ShanePerkins ;
-                                                                                                            :hasHost :London2012 .
+                                                                                                            :hasHost :London2012 ;
+                                                                                                            :hasCompetitorGender "Male"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad
@@ -815,7 +861,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                             :hasAwardedSecondPlaceTo :RogerFederer ;
                                                                                                             :hasAwardedThirdPlaceTo :JuanMartinDelPotro ;
                                                                                                             :hasHost :London2012 ;
-                                                                                                            :hasSport :Tennis_Singles .
+                                                                                                            :hasSport :Tennis_Singles ;
+                                                                                                            :hasCompetitorGender "Male"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round
@@ -854,6 +901,17 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                             :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Women's_Boxing_Middleweight_XXXI_Olympiad
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Women's_Boxing_Middleweight_XXXI_Olympiad> rdf:type owl:NamedIndividual ,
+                                                                                                                             :MultiRoundCompetition ;
+                                                                                                                    :hasAwardedFirstPlaceTo :ClaressaShields ,
+                                                                                                                                            :LiQian ;
+                                                                                                                    :hasAwardedSecondPlaceTo :NouchkaFontijn ;
+                                                                                                                    :hasHost :RioDeJaneiro2016 ;
+                                                                                                                    :hasSport :BoxingMiddleweightWomen ;
+                                                                                                                    :hasCompetitorGender "Female"^^xsd:string .
+
+
 #################################################################
 #    Annotations
 #################################################################
@@ -888,15 +946,29 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :AndyMurray
                         :Biathlon
-                        :Boxing
+                        :BoxingMiddleweightWomen
+                        :ChadLeCLos
+                        :ChenAisen
+                        :ClaressaShields
+                        :Cycling
+                        :DarigaShakimova
+                        :DavidBoudia
                         :Football
+                        :GermanSanchez
+                        :GrégoryBaugé
                         :HammerThrow
                         :HighJump
+                        :JasonKenny
+                        :JuanMartinDelPotro
                         :Judo
+                        :LiQian
                         :London2012
                         :MichaelPhelps
+                        :NouchkaFontijn
                         :RafaelNadal
                         :RioDeJaneiro2016
+                        :RogerFederer
+                        :ShanePerkins
                         :Sochi2014
                         :Taekwondo
                         :Tennis_Singles
@@ -904,6 +976,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         :UsainBolt
                         :Volleyball
                         :Waterpolo
+                        :YevgenyKorotyshkin
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint>
@@ -917,6 +990,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round>
@@ -924,6 +999,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Women's_Boxing_Middleweight_XXXI_Olympiad>
                       )
 ] .
 

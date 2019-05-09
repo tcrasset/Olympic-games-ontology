@@ -494,7 +494,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos
 :ChadLeCLos rdf:type owl:NamedIndividual ,
                      :Athlete ;
-            :playsSport :Swimming ;
+            :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
             :hasFirstName "Chad"^^xsd:string ;
             :hasLastName "Le Clos"^^xsd:string ;
             :hasNationality "South Africa"^^xsd:string .
@@ -570,7 +570,7 @@ Example: kanoe, sailing, diving""" .
 :MichaelPhelps rdf:type owl:NamedIndividual ,
                         :Athlete ;
                :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> ;
-               :playsSport :Swimming ;
+               :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
                :hasBirthdate "1985-03-30T00:00:00"^^xsd:dateTime ;
                :hasFirstName "Michael"^^xsd:string ;
                :hasGender "Male"^^xsd:string ;
@@ -631,11 +631,6 @@ Example: kanoe, sailing, diving""" .
            :startsAtDate "2014-02-07T00:00:00"^^xsd:dateTime .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Swimming
-:Swimming rdf:type owl:NamedIndividual ,
-                   :WaterSport .
-
-
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Taekwondo
 :Taekwondo rdf:type owl:NamedIndividual ,
                     :CombatSport .
@@ -656,7 +651,7 @@ Example: kanoe, sailing, diving""" .
 :UsainBolt rdf:type owl:NamedIndividual ,
                     :Athlete ;
            :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> ;
-           :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> ;
+           :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
            :hasBirthdate "1986-08-21T00:00:00"^^xsd:dateTime ;
            :hasFirstName "Usain"^^xsd:string ;
            :hasGender "Male"^^xsd:string ;
@@ -678,20 +673,25 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YevgenyKorotyshkin
 :YevgenyKorotyshkin rdf:type owl:NamedIndividual ,
                              :Athlete ;
-                    :playsSport :Swimming ;
+                    :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
                     :hasFirstName "Yevgeny"^^xsd:string ;
                     :hasLastName "Korotyshkin"^^xsd:string ;
                     :hasNationality "Russia"^^xsd:string .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> rdf:type owl:NamedIndividual ,
-                                                                                        :AthleticsSport ;
-                                                                               :hasGroupSetting "individual"^^xsd:string ;
-                                                                               :hasNumberOfPlayers "8"^^xsd:int ;
-                                                                               :hasRecords """Men: Usain Bolt 9.58s (2009)
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> rdf:type owl:NamedIndividual ,
+                                                                                                  :WaterSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> rdf:type owl:NamedIndividual ,
+                                                                                               :AthleticsSport ;
+                                                                                      :hasGroupSetting "individual"^^xsd:string ;
+                                                                                      :hasNumberOfPlayers "8"^^xsd:int ;
+                                                                                      :hasRecords """Men: Usain Bolt 9.58s (2009)
 Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
-                                                                               :hasRules "The 100 metres, or 100-metre dash, is a sprint race in track and field competitions"^^xsd:string .
+                                                                                      :hasRules "The 100 metres, or 100-metre dash, is a sprint race in track and field competitions"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad
@@ -701,7 +701,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                      :hasAwardedSecondPlaceTo :ChadLeCLos ;
                                                                                                                      :hasAwardedThirdPlaceTo :YevgenyKorotyshkin ;
                                                                                                                      :hasHost :London2012 ;
-                                                                                                                     :hasSport :Swimming .
+                                                                                                                     :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage
@@ -733,7 +733,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                 :MultiStageCompetition ;
                                                                                                        :hasAwardedFirstPlaceTo :UsainBolt ;
                                                                                                        :hasHost :London2012 ;
-                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> .
+                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage
@@ -860,14 +860,14 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         :RafaelNadal
                         :RioDeJaneiro2016
                         :Sochi2014
-                        :Swimming
                         :Taekwondo
                         :Tennis
                         :Triathlon
                         :UsainBolt
                         :Volleyball
                         :Waterpolo
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage>

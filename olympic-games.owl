@@ -190,6 +190,7 @@ Ex: Men's Singles Tennis XXX Olympiad.""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#endsAtDate
 :endsAtDate rdf:type owl:DatatypeProperty ;
             rdfs:domain :OlympicGame ;
+            rdfs:range xsd:dateTime ;
             rdfs:comment """Starting date of the Olympic game, in datetime format.
 Example: 2012-05-25T23:59:59""" .
 
@@ -205,6 +206,7 @@ Example: 2012-06-03T23:58:58""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBudgetOf
 :hasBudgetOf rdf:type owl:DatatypeProperty ;
              rdfs:domain :OlympicGame ;
+             rdfs:range xsd:int ;
              rdfs:comment "Total spending for the organisation of the Olympic game" .
 
 
@@ -234,6 +236,7 @@ Example: \"male\" or \"female\"""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGroupSetting
 :hasGroupSetting rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Sport ;
+                 rdfs:range xsd:string ;
                  rdfs:comment """Group setting of the sport, either 'individual' or 'collective'
 Example:  100M race is individual, football match is collective""" .
 
@@ -253,9 +256,16 @@ Example: 190""" .
              rdfs:comment "Last name of a person." .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNationality
+:hasNationality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Athlete ;
+                rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfPlayers
 :hasNumberOfPlayers rdf:type owl:DatatypeProperty ;
                     rdfs:domain :Sport ;
+                    rdfs:range xsd:int ;
                     rdfs:comment """Number of players/competitors competing in a typical competition of that sport.
 Example: 22""" .
 
@@ -263,12 +273,14 @@ Example: 22""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfVisitors
 :hasNumberOfVisitors rdf:type owl:DatatypeProperty ;
                      rdfs:domain :OlympicGame ;
+                     rdfs:range xsd:int ;
                      rdfs:comment "Number of visitors during the OlympicGames in the hosting city" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRecords
 :hasRecords rdf:type owl:DatatypeProperty ;
             rdfs:domain :Sport ;
+            rdfs:range xsd:string ;
             rdfs:comment """The current record performances of that Sport
 Example: 100M race time by Usain Bolt at 9:58s""" .
 
@@ -276,6 +288,7 @@ Example: 100M race time by Usain Bolt at 9:58s""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRules
 :hasRules rdf:type owl:DatatypeProperty ;
           rdfs:domain :Sport ;
+          rdfs:range xsd:string ;
           rdfs:comment "Rules of the given Sport" .
 
 
@@ -290,6 +303,7 @@ Example: 85""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedInCity
 :isPlayedInCity rdf:type owl:DatatypeProperty ;
                 rdfs:domain :OlympicGame ;
+                rdfs:range xsd:string ;
                 rdfs:comment """City in which the Olympic Games are held:
 Example: Rio de Janeiro in 2012""" .
 
@@ -302,6 +316,7 @@ Example: Rio de Janeiro in 2012""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#startsAtDate
 :startsAtDate rdf:type owl:DatatypeProperty ;
               rdfs:domain :OlympicGame ;
+              rdfs:range xsd:dateTime ;
               rdfs:comment """Starting date of the Olympic game, in datetime format.
 Example: 2012-05-08T23:59:59""" .
 
@@ -480,6 +495,7 @@ Example: kanoe, sailing, diving""" .
             :hasGender "Male"^^xsd:string ;
             :hasHeight "191"^^xsd:int ;
             :hasLastName "Murray"^^xsd:string ;
+            :hasNationality "GreatBritain"^^xsd:string ;
             :playsSport "Tennis"^^xsd:string .
 
 
@@ -493,6 +509,20 @@ Example: kanoe, sailing, diving""" .
                  :CombatSport .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos
+:ChadLeCLos rdf:type owl:NamedIndividual ,
+                     :Athlete ;
+            :playsSport :Swimming ;
+            :hasFirstName "Chad"^^xsd:string ;
+            :hasLastName "Le Clos"^^xsd:string ;
+            :hasNationality "South Africa"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling
+:Cycling rdf:type owl:NamedIndividual ,
+                  :Sport .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Diving
 :Diving rdf:type owl:NamedIndividual ,
                  :WaterSport .
@@ -503,6 +533,15 @@ Example: kanoe, sailing, diving""" .
                    :BallSport .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GrégoryBaugé
+:GrégoryBaugé rdf:type owl:NamedIndividual ,
+                       :Athlete ;
+              :playsSport :Cycling ;
+              :hasFirstName "Grégory"^^xsd:string ;
+              :hasLastName "Baugé"^^xsd:string ;
+              :hasNationality "France"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HammerThrow
 :HammerThrow rdf:type owl:NamedIndividual ,
                       :AthleticsSport .
@@ -511,6 +550,23 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HighJump
 :HighJump rdf:type owl:NamedIndividual ,
                    :AthleticsSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JasonKenny
+:JasonKenny rdf:type owl:NamedIndividual ,
+                     :Athlete ;
+            :hasFirstName "Jason"^^xsd:string ;
+            :hasLastName "Kenny"^^xsd:string ;
+            :hasNationality "GreatBritain"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JuanMartinDelPotro
+:JuanMartinDelPotro rdf:type owl:NamedIndividual ,
+                             :Athlete ;
+                    :playsSport :Tennis ;
+                    :hasFirstName "Juan Martin"^^xsd:string ;
+                    :hasLastName "Del Potro"^^xsd:string ;
+                    :hasNationality "Argentina"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Judo
@@ -539,6 +595,7 @@ Example: kanoe, sailing, diving""" .
                :hasGender "Male"^^xsd:string ;
                :hasHeight "193"^^xsd:int ;
                :hasLastName "Phelps"^^xsd:string ;
+               :hasNationality "US"^^xsd:string ;
                :hasWeight "88"^^xsd:int .
 
 
@@ -551,6 +608,7 @@ Example: kanoe, sailing, diving""" .
              :hasGender "Male"^^xsd:string ;
              :hasHeight "185"^^xsd:int ;
              :hasLastName "Nadal"^^xsd:string ;
+             :hasNationality "Spain"^^xsd:string ;
              :hasWeight "85"^^xsd:int .
 
 
@@ -562,6 +620,24 @@ Example: kanoe, sailing, diving""" .
                   :hasNumberOfVisitors "1170000"^^xsd:int ;
                   :isPlayedInCity "Rio De Janeiro"^^xsd:string ;
                   :startsAtDate "2012-08-05T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RogerFederer
+:RogerFederer rdf:type owl:NamedIndividual ,
+                       :Athlete ;
+              :playsSport :Tennis ;
+              :hasFirstName "Roger"^^xsd:string ;
+              :hasLastName "Federer"^^xsd:string ;
+              :hasNationality "Switzerland"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ShanePerkins
+:ShanePerkins rdf:type owl:NamedIndividual ,
+                       :Athlete ;
+              :playsSport :Cycling ;
+              :hasFirstName "Shane"^^xsd:string ;
+              :hasLastName "Perkins"^^xsd:string ;
+              :hasNationality "Australia"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sochi2014
@@ -618,9 +694,19 @@ Example: kanoe, sailing, diving""" .
                     :WaterSport .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YevgenyKorotyshkin
+:YevgenyKorotyshkin rdf:type owl:NamedIndividual ,
+                             :Athlete ;
+                    :playsSport :Swimming ;
+                    :hasFirstName "Yevgeny"^^xsd:string ;
+                    :hasLastName "Korotyshkin"^^xsd:string ;
+                    :hasNationality "Russia"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> rdf:type owl:NamedIndividual ,
                                                                                         :AthleticsSport ;
+                                                                               :hasHost :London2012 ;
                                                                                :hasGroupSetting "individual"^^xsd:string ;
                                                                                :hasNumberOfPlayers "8"^^xsd:int ;
                                                                                :hasRecords """Men: Usain Bolt 9.58s (2009)
@@ -632,6 +718,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> rdf:type owl:NamedIndividual ,
                                                                                                                               :MultiStageCompetition ;
                                                                                                                      :hasAwardedFirstPlaceTo :MichaelPhelps ;
+                                                                                                                     :hasAwardedSecondPlaceTo :ChadLeCLos ;
+                                                                                                                     :hasAwardedThirdPlaceTo :YevgenyKorotyshkin ;
                                                                                                                      :hasSport :Swimming ;
                                                                                                                      :isSportCompetitionOf :London2012 .
 
@@ -692,10 +780,21 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                        :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
+                                                                                                                     :SportCompetition ;
+                                                                                                            :hasAwardedFirstPlaceTo :JasonKenny ;
+                                                                                                            :hasAwardedSecondPlaceTo :GrégoryBaugé ;
+                                                                                                            :hasAwardedThirdPlaceTo :ShanePerkins ;
+                                                                                                            :hasHost :London2012 .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> rdf:type owl:NamedIndividual ,
                                                                                                                      :MultiRoundCompetition ;
                                                                                                             :hasAwardedFirstPlaceTo :AndyMurray ;
+                                                                                                            :hasAwardedSecondPlaceTo :RogerFederer ;
+                                                                                                            :hasAwardedThirdPlaceTo :JuanMartinDelPotro ;
                                                                                                             :hasSport :Tennis ;
                                                                                                             :isSportCompetitionOf :London2012 .
 

@@ -471,7 +471,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray
 :AndyMurray rdf:type owl:NamedIndividual ;
             :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> ;
-            :playsSport :Tennis ;
+            :playsSport :Tennis_Singles ;
             :hasBirthdate "1987-05-15T00:00:00"^^xsd:dateTime ;
             :hasFirstName "Andy"^^xsd:string ;
             :hasGender "Male"^^xsd:string ;
@@ -545,7 +545,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JuanMartinDelPotro
 :JuanMartinDelPotro rdf:type owl:NamedIndividual ,
                              :Athlete ;
-                    :playsSport :Tennis ;
+                    :playsSport :Tennis_Singles ;
                     :hasFirstName "Juan Martin"^^xsd:string ;
                     :hasLastName "Del Potro"^^xsd:string ;
                     :hasNationality "Argentina"^^xsd:string .
@@ -583,7 +583,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RafaelNadal
 :RafaelNadal rdf:type owl:NamedIndividual ,
                       :Athlete ;
-             :playsSport :Tennis ;
+             :playsSport :Tennis_Singles ;
              :hasBirthdate "1986-06-03T00:00:00"^^xsd:dateTime ;
              :hasFirstName "Rafael"^^xsd:string ;
              :hasGender "Male"^^xsd:string ;
@@ -606,7 +606,7 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RogerFederer
 :RogerFederer rdf:type owl:NamedIndividual ,
                        :Athlete ;
-              :playsSport :Tennis ;
+              :playsSport :Tennis_Singles ;
               :hasFirstName "Roger"^^xsd:string ;
               :hasLastName "Federer"^^xsd:string ;
               :hasNationality "Switzerland"^^xsd:string .
@@ -636,10 +636,10 @@ Example: kanoe, sailing, diving""" .
                     :CombatSport .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis
-:Tennis rdf:type owl:NamedIndividual ,
-                 :BallSport ;
-        :hasEquipment "Racket"^^xsd:string .
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles
+:Tennis_Singles rdf:type owl:NamedIndividual ,
+                         :BallSport ;
+                :hasEquipment "Racket"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Triathlon
@@ -776,7 +776,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                             :hasAwardedSecondPlaceTo :RogerFederer ;
                                                                                                             :hasAwardedThirdPlaceTo :JuanMartinDelPotro ;
                                                                                                             :hasHost :London2012 ;
-                                                                                                            :hasSport :Tennis .
+                                                                                                            :hasSport :Tennis_Singles .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round
@@ -861,7 +861,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         :RioDeJaneiro2016
                         :Sochi2014
                         :Taekwondo
-                        :Tennis
+                        :Tennis_Singles
                         :Triathlon
                         :UsainBolt
                         :Volleyball

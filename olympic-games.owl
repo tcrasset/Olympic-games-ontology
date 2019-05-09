@@ -58,7 +58,7 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
 :hasRound rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isRoundIn ;
+          owl:inverseOf :isRoundOf ;
           rdfs:domain :MultiRoundCompetition ;
           rdfs:range :Round ;
           rdfs:comment "A MultiRoundCompetition has Rounds that are played as part of it" .
@@ -71,15 +71,6 @@
           rdfs:range :Sport ;
           rdfs:comment """A SportCompetition has a Sport that is played in that competition
 Ex: Tennis""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSportCompetition
-:hasSportCompetition rdf:type owl:ObjectProperty ;
-                     owl:inverseOf :isSportCompetitionOf ;
-                     rdfs:domain :OlympicGame ;
-                     rdfs:range :SportCompetition ;
-                     rdfs:comment """An OlympicGame has a SportCompetition as an event
-Example: Men's Singles Tennis XXX Olympiad""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage
@@ -126,8 +117,8 @@ Example: Men's Singles Tennis XXX Olympiad""" .
             rdfs:comment "A Sport is played by an Athlete" .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundIn
-:isRoundIn rdf:type owl:ObjectProperty ;
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundOf
+:isRoundOf rdf:type owl:ObjectProperty ;
            rdfs:domain :Round ;
            rdfs:range :MultiRoundCompetition ;
            rdfs:comment "A round is part of a MultiRoundCompetition" .
@@ -138,15 +129,6 @@ Example: Men's Singles Tennis XXX Olympiad""" .
                        rdfs:domain :Athlete ;
                        rdfs:range :SportCompetition ;
                        rdfs:comment "An Athlete wins second place in a SportCompetition." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportCompetitionOf
-:isSportCompetitionOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf owl:topObjectProperty ;
-                      rdfs:domain :SportCompetition ;
-                      rdfs:range :OlympicGame ;
-                      rdfs:comment """A SportCompetition is part of an OlympicGame
-Example: Sochi2014""" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportOf
@@ -206,7 +188,7 @@ Example: 2012-06-03T23:58:58""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBudgetOf
 :hasBudgetOf rdf:type owl:DatatypeProperty ;
              rdfs:domain :OlympicGame ;
-             rdfs:range xsd:int ;
+             rdfs:range xsd:long ;
              rdfs:comment "Total spending for the organisation of the Olympic game" .
 
 
@@ -411,7 +393,7 @@ Example: the Football World Cup.""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
 :Round rdf:type owl:Class ;
        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :isRoundIn ;
+                         owl:onProperty :isRoundOf ;
                          owl:someValuesFrom :MultiRoundCompetition
                        ] ;
        rdfs:comment """A round is one or more competitions that is part of a Multi-Round Competition.
@@ -577,9 +559,8 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012
 :London2012 rdf:type owl:NamedIndividual ,
                      :SummerGame ;
-            :hasSportCompetition <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> ;
             :endsAtDate "2012-07-27T00:00:00"^^xsd:dateTime ;
-            :hasBudgetOf "15280000000"^^xsd:int ;
+            :hasBudgetOf "15280000000"^^xsd:long ;
             :hasNumberOfVisitors "471000"^^xsd:int ;
             :isPlayedInCity "London"^^xsd:string ;
             :startsAtDate "2012-08-12T00:00:00"^^xsd:dateTime .
@@ -616,7 +597,7 @@ Example: kanoe, sailing, diving""" .
 :RioDeJaneiro2016 rdf:type owl:NamedIndividual ,
                            :SummerGame ;
                   :endsAtDate "2012-08-21T23:59:59"^^xsd:dateTime ;
-                  :hasBudgetOf "13200000000"^^xsd:int ;
+                  :hasBudgetOf "13200000000"^^xsd:long ;
                   :hasNumberOfVisitors "1170000"^^xsd:int ;
                   :isPlayedInCity "Rio De Janeiro"^^xsd:string ;
                   :startsAtDate "2012-08-05T00:00:00"^^xsd:dateTime .
@@ -644,7 +625,7 @@ Example: kanoe, sailing, diving""" .
 :Sochi2014 rdf:type owl:NamedIndividual ,
                     :WinterGame ;
            :endsAtDate "2014-02-23T00:00:00"^^xsd:dateTime ;
-           :hasBudgetOf "5100000000"^^xsd:int ;
+           :hasBudgetOf "5100000000"^^xsd:long ;
            :hasNumberOfVisitors "870000"^^xsd:int ;
            :isPlayedInCity "Sochi"^^xsd:string ;
            :startsAtDate "2014-02-07T00:00:00"^^xsd:dateTime .
@@ -706,7 +687,6 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> rdf:type owl:NamedIndividual ,
                                                                                         :AthleticsSport ;
-                                                                               :hasHost :London2012 ;
                                                                                :hasGroupSetting "individual"^^xsd:string ;
                                                                                :hasNumberOfPlayers "8"^^xsd:int ;
                                                                                :hasRecords """Men: Usain Bolt 9.58s (2009)
@@ -720,8 +700,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                      :hasAwardedFirstPlaceTo :MichaelPhelps ;
                                                                                                                      :hasAwardedSecondPlaceTo :ChadLeCLos ;
                                                                                                                      :hasAwardedThirdPlaceTo :YevgenyKorotyshkin ;
-                                                                                                                     :hasSport :Swimming ;
-                                                                                                                     :isSportCompetitionOf :London2012 .
+                                                                                                                     :hasHost :London2012 ;
+                                                                                                                     :hasSport :Swimming .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage
@@ -752,8 +732,8 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> rdf:type owl:NamedIndividual ,
                                                                                                                 :MultiStageCompetition ;
                                                                                                        :hasAwardedFirstPlaceTo :UsainBolt ;
-                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> ;
-                                                                                                       :isSportCompetitionOf :London2012 .
+                                                                                                       :hasHost :London2012 ;
+                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage
@@ -795,44 +775,44 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                             :hasAwardedFirstPlaceTo :AndyMurray ;
                                                                                                             :hasAwardedSecondPlaceTo :RogerFederer ;
                                                                                                             :hasAwardedThirdPlaceTo :JuanMartinDelPotro ;
-                                                                                                            :hasSport :Tennis ;
-                                                                                                            :isSportCompetitionOf :London2012 .
+                                                                                                            :hasHost :London2012 ;
+                                                                                                            :hasSport :Tennis .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round> rdf:type owl:NamedIndividual ,
                                                                                                                               :Round ;
-                                                                                                                     :isRoundIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
+                                                                                                                     :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round> rdf:type owl:NamedIndividual ,
                                                                                                                               :Round ;
-                                                                                                                     :isRoundIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
+                                                                                                                     :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_64_Round
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_64_Round> rdf:type owl:NamedIndividual ,
                                                                                                                               :Round ;
-                                                                                                                     :isRoundIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
+                                                                                                                     :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round> rdf:type owl:NamedIndividual ,
                                                                                                                                  :Round ;
-                                                                                                                        :isRoundIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
+                                                                                                                        :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round> rdf:type owl:NamedIndividual ,
                                                                                                                                         :Round ;
-                                                                                                                               :isRoundIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
+                                                                                                                               :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round> rdf:type owl:NamedIndividual ,
                                                                                                                                      :Round ;
-                                                                                                                            :isRoundIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
+                                                                                                                            :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
 
 
 #################################################################

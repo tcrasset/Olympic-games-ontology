@@ -716,19 +716,28 @@ Example: kanoe, sailing, diving""" .
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt
 :UsainBolt rdf:type owl:NamedIndividual ,
                     :Athlete ;
-           :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> ;
+           :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> ;
            :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
            :hasBirthdate "1986-08-21T00:00:00"^^xsd:dateTime ;
            :hasFirstName "Usain"^^xsd:string ;
            :hasGender "Male"^^xsd:string ;
            :hasHeight "195"^^xsd:int ;
            :hasLastName "Bolt"^^xsd:string ;
+           :hasNationality "Jamaica" ;
            :hasWeight "94"^^xsd:int .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Volleyball
 :Volleyball rdf:type owl:NamedIndividual ,
                      :BallSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WarrenWeir
+:WarrenWeir rdf:type owl:NamedIndividual ,
+                     :Athlete ;
+            :hasFirstName "Warren"^^xsd:string ;
+            :hasLastName "Weir" ;
+            :hasNationality "Jamaica" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo
@@ -743,6 +752,15 @@ Example: kanoe, sailing, diving""" .
                     :hasFirstName "Yevgeny"^^xsd:string ;
                     :hasLastName "Korotyshkin"^^xsd:string ;
                     :hasNationality "Russia"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YohanBlake
+:YohanBlake rdf:type owl:NamedIndividual ,
+                     :Athlete ;
+            :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> ;
+            :hasFirstName "Yohan" ;
+            :hasLastName "Blake" ;
+            :hasNationality "Jamaica" .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving
@@ -763,6 +781,11 @@ Example: kanoe, sailing, diving""" .
                                                                                       :hasRecords """Men: Usain Bolt 9.58s (2009)
 Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                       :hasRules "The 100 metres, or 100-metre dash, is a sprint race in track and field competitions"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> rdf:type owl:NamedIndividual ,
+                                                                                               :AthleticsSport .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad
@@ -800,37 +823,37 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                                                       :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                :MultiStageCompetition ;
-                                                                                                       :hasAwardedFirstPlaceTo :UsainBolt ;
-                                                                                                       :hasHost :London2012 ;
-                                                                                                       :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
-                                                                                                       :hasCompetitorGender "Male"^^xsd:string .
-
-
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage> rdf:type owl:NamedIndividual ,
                                                                                                                             :Stage ;
-                                                                                                                   :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> .
+                                                                                                                   :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage> rdf:type owl:NamedIndividual ,
                                                                                                                             :Stage ;
-                                                                                                                   :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> .
+                                                                                                                   :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage> rdf:type owl:NamedIndividual ,
                                                                                                                                    :Stage ;
-                                                                                                                          :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> .
+                                                                                                                          :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage> rdf:type owl:NamedIndividual ,
                                                                                                                                 :Stage ;
-                                                                                                                       :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> .
+                                                                                                                       :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
+                                                                                                                  :MultiStageCompetition ;
+                                                                                                         :hasAwardedFirstPlaceTo :UsainBolt ;
+                                                                                                         :hasHost :London2012 ;
+                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
+                                                                                                         :hasCompetitorGender "Male"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad
@@ -842,6 +865,16 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                                                                                                          :hasHost :RioDeJaneiro2016 ;
                                                                                                          :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
                                                                                                          :hasCompetitorGender "Male"^^xsd:string .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_200M_Sprint_XXX_Olympiad
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_200M_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
+                                                                                                                  :MultiStageCompetition ;
+                                                                                                         :hasAwardedFirstPlaceTo :UsainBolt ;
+                                                                                                         :hasAwardedSecondPlaceTo :YohanBlake ;
+                                                                                                         :hasAwardedThirdPlaceTo :WarrenWeir ;
+                                                                                                         :hasHost :London2012 ;
+                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad
@@ -975,22 +1008,26 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         :Triathlon
                         :UsainBolt
                         :Volleyball
+                        :WarrenWeir
                         :Waterpolo
                         :YevgenyKorotyshkin
+                        :YohanBlake
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad>
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_200M_Sprint_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round>

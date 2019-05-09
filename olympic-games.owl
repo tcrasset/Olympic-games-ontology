@@ -502,19 +502,41 @@ Example: kanoe, sailing, diving""" .
             :hasNationality "South Africa"^^xsd:string .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChenAisen
+:ChenAisen rdf:type owl:NamedIndividual ,
+                    :Athlete ;
+           :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
+           :hasFirstName "Chen"^^xsd:string ;
+           :hasLastName "Aisen"^^xsd:string ;
+           :hasNationality "China"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling
 :Cycling rdf:type owl:NamedIndividual ,
                   :Sport .
 
 
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Diving
-:Diving rdf:type owl:NamedIndividual ,
-                 :WaterSport .
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#DavidBoudia
+:DavidBoudia rdf:type owl:NamedIndividual ,
+                      :Athlete ;
+             :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
+             :hasFirstName "David"^^xsd:string ;
+             :hasLastName "Boudia"^^xsd:string ;
+             :hasNationality "UnitedStates"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Football
 :Football rdf:type owl:NamedIndividual ,
                    :BallSport .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GermanSanchez
+:GermanSanchez rdf:type owl:NamedIndividual ,
+                        :Athlete ;
+               :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
+               :hasFirstName "German"^^xsd:string ;
+               :hasLastName "Sanchez"^^xsd:string ;
+               :hasNationality "Mexico"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GrégoryBaugé
@@ -578,7 +600,7 @@ Example: kanoe, sailing, diving""" .
                :hasGender "Male"^^xsd:string ;
                :hasHeight "193"^^xsd:int ;
                :hasLastName "Phelps"^^xsd:string ;
-               :hasNationality "US"^^xsd:string ;
+               :hasNationality "UnitedStates"^^xsd:string ;
                :hasWeight "88"^^xsd:int .
 
 
@@ -681,6 +703,11 @@ Example: kanoe, sailing, diving""" .
                     :hasNationality "Russia"^^xsd:string .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> rdf:type owl:NamedIndividual ,
+                                                                                              :WaterSport .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> rdf:type owl:NamedIndividual ,
                                                                                                   :WaterSport .
@@ -760,6 +787,16 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage> rdf:type owl:NamedIndividual ,
                                                                                                                                 :Stage ;
                                                                                                                        :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad> .
+
+
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad
+<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad> rdf:type owl:NamedIndividual ,
+                                                                                                                  :WaterSport ;
+                                                                                                         :hasAwardedFirstPlaceTo :ChenAisen ;
+                                                                                                         :hasAwardedSecondPlaceTo :GermanSanchez ;
+                                                                                                         :hasAwardedThirdPlaceTo :DavidBoudia ;
+                                                                                                         :hasHost :RioDeJaneiro2016 ;
+                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad
@@ -852,7 +889,6 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
   owl:distinctMembers ( :AndyMurray
                         :Biathlon
                         :Boxing
-                        :Diving
                         :Football
                         :HammerThrow
                         :HighJump
@@ -868,6 +904,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
                         :UsainBolt
                         :Volleyball
                         :Waterpolo
+                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint>
                         <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad>

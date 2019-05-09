@@ -835,7 +835,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                  :WaterSport ;
+                                                                                                                  :MultiStageCompetition ;
                                                                                                          :hasAwardedFirstPlaceTo :ChenAisen ;
                                                                                                          :hasAwardedSecondPlaceTo :GermanSanchez ;
                                                                                                          :hasAwardedThirdPlaceTo :DavidBoudia ;

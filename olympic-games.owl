@@ -14,7 +14,7 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedFirstPlaceTo
 :hasAwardedFirstPlaceTo rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:subPropertyOf :hasCompetitor ;
                         owl:inverseOf :isFirstPlaceWinnerOf ;
                         rdfs:domain :SportCompetition ;
                         rdfs:range :Athlete ;
@@ -23,7 +23,7 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedSecondPlaceTo
 :hasAwardedSecondPlaceTo rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:subPropertyOf :hasCompetitor ;
                          owl:inverseOf :isSecondPlaceWinnerOf ;
                          rdfs:domain :SportCompetition ;
                          rdfs:range :Athlete ;
@@ -32,7 +32,7 @@
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedThirdPlaceTo
 :hasAwardedThirdPlaceTo rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdfs:subPropertyOf :hasCompetitor ;
                         owl:inverseOf :isThirdPlaceWinnerOf ;
                         rdfs:domain :SportCompetition ;
                         rdfs:range :Athlete ;
@@ -96,6 +96,7 @@ Ex: Tennis""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf
 :isFirstPlaceWinnerOf rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :isCompetitorIn ;
                       rdfs:domain :Athlete ;
                       rdfs:range :SportCompetition ;
                       rdfs:comment "An Athlete wins first place in a SportCompetition." .
@@ -126,6 +127,7 @@ Ex: Tennis""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSecondPlaceWinnerOf
 :isSecondPlaceWinnerOf rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :isCompetitorIn ;
                        rdfs:domain :Athlete ;
                        rdfs:range :SportCompetition ;
                        rdfs:comment "An Athlete wins second place in a SportCompetition." .
@@ -148,7 +150,7 @@ Ex: Men's Singles Tennis XXX Olympiad.""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isThirdPlaceWinnerOf
 :isThirdPlaceWinnerOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:subPropertyOf :isCompetitorIn ;
                       rdfs:domain :Athlete ;
                       rdfs:range :SportCompetition ;
                       rdfs:comment "An Athlete wins third place in a SportCompetition." .

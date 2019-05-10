@@ -482,7 +482,8 @@ Example: kanoe, sailing, diving""" .
 #################################################################
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray
-:AndyMurray rdf:type owl:NamedIndividual ;
+:AndyMurray rdf:type owl:NamedIndividual ,
+                     :Athlete ;
             :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> ;
             :playsSport :Tennis_Singles ;
             :hasBirthdate "1987-05-15T00:00:00"^^xsd:dateTime ;
@@ -741,8 +742,8 @@ Example: kanoe, sailing, diving""" .
 :WarrenWeir rdf:type owl:NamedIndividual ,
                      :Athlete ;
             :hasFirstName "Warren"^^xsd:string ;
-            :hasLastName "Weir" ;
-            :hasNationality "Jamaica" .
+            :hasLastName "Weir"^^xsd:string ;
+            :hasNationality "Jamaica"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo
@@ -763,9 +764,9 @@ Example: kanoe, sailing, diving""" .
 :YohanBlake rdf:type owl:NamedIndividual ,
                      :Athlete ;
             :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> ;
-            :hasFirstName "Yohan" ;
-            :hasLastName "Blake" ;
-            :hasNationality "Jamaica" .
+            :hasFirstName "Yohan"^^xsd:string ;
+            :hasLastName "Blake"^^xsd:string ;
+            :hasNationality "Jamaica"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving

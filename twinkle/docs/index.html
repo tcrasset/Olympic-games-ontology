@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>Twinkle: A SPARQL Query Tool</title>
+</head>
+
+<body>
+
+  <p align="center">
+    <a href="http://www.ldodds.com/projects/twinkle">
+    <img src="twinkle.jpg" border="0"/></a>
+  </p>
+
+  <p>
+    <h2 align="center">Twinkle: A SPARQL Query Tool</h2>
+  </p>
+
+  <p>
+  Twinkle is a simple GUI interface that wraps the
+  <a href="http://jena.hpl.hp.com/ARQ/">ARQ</a> <a href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL</a> query engine</a>.
+  The tool should be useful both for people wanting to learn the SPARQL query language, as well
+  as those doing Semantic Web development.
+  </p>
+
+  <p>
+  Twinkle was originally inspired by Elliotte Harold's <a href="http://www.cafeconleche.org/xquisitor/">XQuisitor</a>
+  which provides a simple GUI interface for playing with <a href="http://www.w3.org/TR/xquery/">XQuery</a>.
+  </p>
+
+  <a name="features"><h3>Features</h3></a>
+
+  <ul>
+    <li>Load, edit and save SPARQL queries</li>
+    <li>Insert PREFIX statements into queries</li>
+    <li>Configure custom namespaces so they can be quickly inserted into queries</li>
+    <li>Cancel long running queries</li>
+    <li>Save results to file</li>
+    <li>Query local files and remote RDF documents</li>
+    <li>Query RDF data held in relational databases</li>
+    <li>Query online SPARQL endpoints, such as DBpedia, reyvu.com and GovTrack.</li>
+    <li>Query using standard SPARQL, or the ARQ extended syntax which supports
+      <a href="http://seaborne.blogspot.com/2007/09/counting-and-group-by.html">COUNT</a>, etc.</li>
+    <li>Use ARQ <a href="http://jena.sourceforge.net/ARQ/library-function.html">extension functions</a>
+    and <a href="http://jena.sourceforge.net/ARQ/library-propfunc.html">property functions</a></li>
+    <li>Apply inferencing (e.g. Jena rules, RDF Schema, OWL ontology) when running queries</li>
+    <li>Configure commonly used data sources for quick access</li>
+  </ul>ex
+
+  <a name="docs"><h3>Documentation</h3></a>
+
+  <p>View some <a href="http://flickr.com/photos/ldodds/tags/twinkle/">annotated screen shots</a> on Flickr</p>
+
+  <p>
+  To configure new data sources and prefixes, see <code>etc/config.n3</code> in the distribution.
+  </p>
+
+  <p>
+  There are some sample SPARQL queries included in the distributon in the <code>examples</code>
+  directory. There should be some for each of the pre-configured sources.
+  </p>
+
+  <a name="download"><h3>Download</h3></a>
+
+  <ul>
+    <li><a href="http://www.ldodds.com/projects/twinkle/twinkle-2.0-src.zip">Twinkle 2.0</a> (source)</li>
+    <li><a href="http://www.ldodds.com/projects/twinkle/twinkle-2.0-bin.zip">Twinkle 2.0</a> (binary)</li>
+  </ul>
+
+  <p>
+  You'll need to have Java 1.5 or higher installed to use Twinkle. Download the distribution and unzip it
+  into a new directory. Open a command-prompt and execute the following:
+  </p>
+
+  <pre>
+  <code>
+  java -jar twinkle.jar
+  </code>
+  </pre>
+
+  <a href="licence"><a href="licence">Licence</a></a>
+
+  <p>
+  Twinkle is distributed under the <a href="http://www.gnu.org/licenses/gpl.html">Gnu Public Licence</a>.
+  </p>
+
+  <p>
+  Photo courtesy of <a href="http://www.flickr.com/photos/glenbowman/1881127830/">Glen Bowman</a>
+  </p>
+
+</body>
+
+</html>

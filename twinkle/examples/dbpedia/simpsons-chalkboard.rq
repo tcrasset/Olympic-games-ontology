@@ -1,0 +1,10 @@
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+PREFIX dbpedia: <http://dbpedia.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT *
+WHERE {
+  ?episode skos:subject 
+    <http://dbpedia.org/resource/Category:The_Simpsons_episodes%2C_season_12>.
+  ?episode dbpedia2:blackboard ?chalkboard_gag.
+}

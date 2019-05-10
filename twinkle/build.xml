@@ -1,0 +1,143 @@
+<project name="twinkle" default="build">
+   <description>Twinkle: A Sparql query tool </description>
+
+   <!-- Allow property overriding -->
+   <property file=".ant.properties"/>
+   <property file="${user.home}/.ant.properties"/>
+   <property file="version.properties"/>
+   
+   <!-- Project Directories -->
+   <property name="java.dir"     value="src/java"/>
+   <property name="bin.dir"      value="bin"/>
+   <property name="test.dir"     value="src/tests"/>
+   <property name="icons.dir"     value="src/icons"/>	
+   <property name="doc.dir"      value="docs/api"/>
+   <property name="lib.dir"      value="lib"/>
+   <property name="dist.dir"   value="dist"/>
+
+   <!-- Java Build Properties -->
+   <property name="debug"        value="on"/>
+   <property name="optimize"     value="off"/>
+   <property name="deprecation"  value="off"/>
+   <property name="nowarn"       value="on"/>
+
+   <property name="app.name"     value="twinkle"/>
+
+   <path id="classpath">
+      <fileset dir="${lib.dir}">
+         <include name="*.jar"/>
+      </fileset>
+   </path>
+
+   <target name="clean" description="Clean">
+      <delete>
+         <fileset dir="${bin.dir}" />
+         <fileset dir="${dist.dir}"/>
+      </delete>
+   </target>
+
+   <target name="build" description="Compile the application">
+      <javac srcdir="${java.dir}"
+             destdir="${bin.dir}"
+             debug="${debug}"
+             optimize="${optimize}"
+             deprecation="${deprecation}"
+             nowarn="${nowarn}">
+        <classpath refid="classpath"/>
+      </javac>
+
+      <copy todir="${bin.dir}" >
+         <fileset dir="${java.dir}" excludes="**/*.java"/>
+      </copy>
+
+      <copy todir="${bin.dir}" >
+         <fileset dir="${icons.dir}" includes="**/*.png"/>
+      </copy>   	
+   </target>
+
+   <target name="build.tests" description="Compile the tests">
+      <javac srcdir="${test.dir}"
+             destdir="${bin.dir}"
+             debug="${debug}"
+             optimize="${optimize}"
+             deprecation="${deprecation}"
+             nowarn="${nowarn}">
+        <classpath refid="classpath"/>
+      </javac>
+      
+      <copy todir="${bin.dir}" >
+         <fileset dir="${test.dir}" excludes="**/*.java"/>
+      </copy>      
+   </target>
+
+   <target name="build.all" depends="build, build.tests" description="Compile app and tests">
+   </target>
+
+   <target name="javadoc" description="Generate javadocs">
+      <javadoc
+           defaultexcludes="yes"
+           destdir="${doc.dir}"
+           author="true"
+           version="true"
+           use="true"
+           windowtitle="${app.name} API">
+       <fileset dir="${java.dir}" defaultexcludes="yes">
+         <include name="**/*.java" />
+       </fileset>           
+      </javadoc>
+   </target>
+
+   <target name="jar" depends="build" description="make jar file">
+      <jar destfile="${app.name}.jar"
+           basedir="${bin.dir}">
+   	    <manifest>
+            <attribute name="Main-Class" value="com.ldodds.twinkle.Twinkle"/>
+            <attribute name="Class-Path" value="lib/antlr-2.7.5.jar
+            									lib/arq.jar 
+												lib/arq-extra.jar            	
+            									lib/commons-logging-1.1.jar            	
+												lib/concurrent.jar    	    	   	    	
+												lib/icu4j_3_4.jar
+            									lib/iri.jar
+   	    										lib/jena.jar
+            									lib/json.jar   	    	   	    	
+												lib/log4j-1.2.12.jar	    	   	    	   	    	
+												lib/lucene-core-2.0.0.jar	    	   	    	   	    	            	
+												lib/mysql-connector-java-5.1.5-bin.jar
+									            lib/postgresql-8.2-507.jdbc3.jar
+            									lib/stax-api-1.0.jar
+            									lib/swingx-2007_12_02.jar
+            									lib/swing-worker-1.1.jar
+            									lib/wstx-asl-3.0.0.jar
+												lib/xercesImpl.jar
+												lib/xml-apis.jar"/>
+         </manifest>
+      	
+      </jar>
+   </target>
+
+   <target name="dist" depends="build.all, jar, javadoc" description="make distributions">
+      <mkdir dir="${dist.dir}"/>
+      <echo>Making src distribution</echo>
+      <zip destfile="${dist.dir}/${app.name}-${version}-src.zip"
+           basedir="./.."
+      	   includes="twinkle/**"
+           excludes="twinkle/${dist.dir}/**">
+      </zip>
+      <echo>Making nolibs-src distribution</echo>      
+      <zip destfile="${dist.dir}/${app.name}-${version}-nolibs-src.zip"
+           basedir="."
+           excludes="${dist.dir}/**,${lib.dir}/**">
+      </zip>
+      <echo>Making binary distribution</echo>      
+      <zip destfile="${dist.dir}/${app.name}-${version}-bin.zip"
+           basedir="."
+           excludes="${dist.dir}/**,${reports.dir}/**,src/**">
+      </zip>
+      <echo>Making nolibs-bin distribution</echo>      
+      <zip destfile="${dist.dir}/${app.name}-${version}-nolibs-bin.zip"
+           basedir="."
+           excludes="${dist.dir}/**,${reports.dir}/**,${lib.dir}/**,src/**">
+      </zip>
+   </target>
+</project>

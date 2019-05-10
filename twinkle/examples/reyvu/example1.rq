@@ -1,0 +1,10 @@
+PREFIX rev: <http://purl.org/stuff/rev#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?thing ?name ?review ?createdOn
+WHERE
+{
+ ?thing rdfs:label ?name .
+ ?thing rev:hasReview ?review .
+ ?review rev:reviewer <people/tom> .
+ ?review rev:createdOn ?createdOn
+}

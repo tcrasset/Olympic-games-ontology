@@ -1,0 +1,289 @@
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+
+# Jena Assembler Namespace
+@prefix ja:         <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix jr:         <http://jena.hpl.hp.com/2003/08/Assembler.ReificationMode#> .
+
+# Utility Namespaces
+@prefix dc:         <http://purl.org/dc/elements/1.1/> .
+
+# Twinkle Query Sources
+@prefix sources:    <http://www.ldodds.com/twinkle/sources/>.
+
+@prefix :           <#> .
+
+@prefix eg:			<http://www.example.org/>.
+
+#
+# About this document
+#
+<>  dc:creator       "Leigh Dodds" ;
+    dc:title         "Twinkle Configuration" ;
+    dc:date          "2007-12-16" ;
+    dc:format        "RDF" ;
+    dc:identifier    :
+    .
+
+
+################################################################
+#	IN-MEMORY SOURCES
+#
+# An "in-memory" source is one which involves the UI fetching 
+# some data, either off the local disk or the network, and
+# parsing it to create an in-memory representation which is 
+# then queried.
+#
+# Any of the usual Jena Assembler configuration elements can be 
+# supplied here, so consult the official documentation for a
+# full set of examples and terms:
+# 		http://jena.sourceforge.net/assembler/index.html
+#
+# To summarize, you can do the following:
+#
+# * Define a data set of commonly used local or remote data
+# * Apply rules to the data, using Jena Rules
+# * Add inferencing to the data, using an OWL ontology
+#
+# The examples below attempt to illustrate some of these options.
+#
+# Be sure to define the source as having a type of "ja:MemoryModel" 
+# so that its properly found and displayed by the UI. Add an 
+# rdfs:label property to control the labelling in the UI.
+################################################################
+
+#
+# This configures a data set that combines the Planet RDF blog roll
+# with its current RSS feed, allowing you to query across both
+# datasets.
+# 
+:planetrdf a ja:MemoryModel
+    ; ja:content [
+         ja:externalContent <http://planetrdf.com/index.rdf>
+      ]
+    ; ja:content [
+         ja:externalContent <http://journal.dajobe.org/journal/2003/07/semblogs/bloggers.rdf>
+      ]
+    ; rdfs:label "Planet RDF Feed & Blogroll"
+    .
+    
+:periodicTable a ja:MemoryModel
+    ; ja:content [
+    	ja:externalContent <http://www.daml.org/2003/01/periodictable/PeriodicTable.owl>
+      ]        
+    ; rdfs:label "Periodic Table"
+    .
+    
+################################################################
+# PERSISTENT STORES
+#
+# Persistent stores are those that read data from a relational 
+# database. You can configure these stores to use reasoning and 
+# inferencing just like the in-memory stores
+#
+# The example configuration below illustrates setting up a 
+# database connection called "Example". The rdfs:label is 
+# used in the user interface, be sure to add one. The data 
+# is stored in a Jena model called DEFAULT which is held 
+# in a MySQL database in a schema called SCHEMA. To connect
+# to the database Twinkle will use the specified username
+# and password.
+#
+# Twinkle ships with a MySQL and Postgres driver built in, so
+# you've no need to alter your CLASSPATH if you're using those
+# databases
+################################################################
+        
+#eg:database-example ja:modelName "DEFAULT"
+#    ; ja:connection eg:connection
+#    ; rdfs:label "Example"
+#    .
+#            
+#eg:connection
+#    ja:dbURL <jdbc:mysql://localhost/SCHEMA>
+#    ; ja:dbClass "com.mysql.jdbc.Driver"
+#    ; ja:dbType "MySQL"
+#    ; ja:dbUser "user"
+#    ; ja:dbPassword "pass"
+#    .
+
+################################################################
+# INFERENCING SOURCES
+#
+# Inferencing sources apply Jena Rules, RDF Schemas and OWL
+# ontologies to data sources. The source may be an in-memory 
+# model or a persistent store.
+#
+# See the Jena Assembler how-to for more information
+#  http://jena.sourceforge.net/assembler/index.html
+################################################################
+
+#
+# This example applies the FOAF RDFS schema to the :planetrdf
+# model defined earlier
+# 
+eg:rule-example
+  rdfs:label "Planet Feed (RDFS)"
+  ; ja:baseModel :planetrdf
+  ; ja:reasoner [ 
+  		 ja:reasonerURL <http://jena.hpl.hp.com/2003/RDFSExptRuleReasoner>
+  		 ; ja:schema <http://xmlns.com/foaf/spec/index.rdf>
+    ]
+  .
+  
+################################################################
+# SPARQL ENDPOINT CONFIGURATION
+#
+# To configure new SPARQL endpoints you need to add the 
+# URI of the endpoint to this configuration file and indicate 
+# that the resource is of type "sources:Endpoint". This will 
+# ensure that the user interface displays the endpoint.
+#
+# Add an rdfs:label to label the endpoint in the UI. If there's
+# no label then its won't display. The prefixes are automatically
+# sorted based on the label.
+#
+# If the Endpoint requires a fixed data source and doesn't 
+# add this by default, its possible to set one here using 
+# the sources:defaultGraph property.
+#
+################################################################
+  
+<http://dbpedia.org/sparql> a sources:Endpoint
+    ; sources:defaultGraph "http://dbpedia.org"
+    ; rdfs:label "DBpedia.org".
+
+<http://www.rdfabout.com/sparql> a sources:Endpoint
+    ; rdfs:label "GovTrack.us".
+
+<http://revyu.com/sparql> a sources:Endpoint
+    ; rdfs:label "Reyvu.com".
+    
+################################################################
+#
+# PREFIX MAPPINGS
+# 
+# This section defines the prefixes that can be inserted into
+# a query via Edit -> Insert Prefix
+#
+# If you add new prefixes, then make sure the prefix values
+# are unique.
+################################################################
+
+:foaf a ja:PrefixMapping 
+  ; rdfs:label "FOAF"
+  ; ja:prefix "foaf"
+  ; ja:namespace "http://xmlns.com/foaf/0.1/"
+  .
+  
+:rdf a ja:PrefixMapping 
+  ; rdfs:label "RDF"
+  ; ja:prefix "rdf"
+  ; ja:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  .
+
+:rdfs a ja:PrefixMapping 
+  ; rdfs:label "RDF Schema"
+  ; ja:prefix "rdfs"
+  ; ja:namespace "http://www.w3.org/2000/01/rdf-schema#"
+  .
+
+:owl a ja:PrefixMapping
+  ; rdfs:label "OWL"
+  ; ja:prefix "owl"
+  ; ja:namespace "http://www.w3.org/2002/07/owl#"
+  .
+
+:skos a ja:PrefixMapping
+  ; rdfs:label "SKOS"
+  ; ja:prefix "skos"
+  ; ja:namespace "http://www.w3.org/2004/02/skos/core#"
+  .
+
+:skos a ja:PrefixMapping
+  ; rdfs:label "RSS 1.0"
+  ; ja:prefix "rss"
+  ; ja:namespace "http://purl.org/rss/1.0/"
+  .
+  
+:dc a ja:PrefixMapping
+  ; rdfs:label "Dublin Core"
+  ; ja:prefix "dc"
+  ; ja:namespace "http://purl.org/dc/elements/1.1/"
+  .
+  
+:arqlist a ja:PrefixMapping
+  ; rdfs:label "ARQ List Extensions"
+  ; ja:prefix "list"
+  ; ja:namespace "http://jena.hpl.hp.com/ARQ/list#"
+  .
+  
+:xsd a ja:PrefixMapping
+  ; rdfs:label "XML Schema"
+  ; ja:prefix "xsd"
+  ; ja:namespace "http://www.w3.org/2001/XMLSchema#"  
+  .
+  
+:afn a ja:PrefixMapping
+  ; rdfs:label "ARQ Functions"
+  ; ja:prefix "afn"
+  ; ja:namespace "http://jena.hpl.hp.com/ARQ/function#"  
+  .
+  
+:fn a ja:PrefixMapping
+  ; rdfs:label "XPath Functions"
+  ; ja:prefix "fn"
+  ; ja:namespace "http://www.w3.org/2005/xpath-functions#"
+  .
+  
+:apf a ja:PrefixMapping
+  ; rdfs:label "ARQ Property Functions"
+  ; ja:prefix "apf"
+  ; ja:namespace "http://jena.hpl.hp.com/ARQ/property#"
+  .
+
+:dcterms a ja:PrefixMapping
+  ; rdfs:label "Dublin Core Terms"
+  ; ja:prefix "dcterms"
+  ; ja:namespace "http://purl.org/dc/terms/"
+  .
+
+:dctype a ja:PrefixMapping
+  ; rdfs:label "Dublin Core Type"
+  ; ja:prefix "dctype"
+  ; ja:namespace "http://purl.org/dc/dcmitype/"
+  .
+
+:geo a ja:PrefixMapping
+  ; rdfs:label "W3C Geo Schema"
+  ; ja:prefix "geo"
+  ; ja:namespace "http://www.w3.org/2003/01/geo/wgs84_pos#"
+  .
+
+:dbpedia2 a ja:PrefixMapping
+  ; rdfs:label "DBpedia Property"
+  ; ja:prefix "dbpedia2"
+  ; ja:namespace "http://dbpedia.org/property/"
+  .  
+
+:rev a ja:PrefixMapping
+  ; rdfs:label "Review Vocabulary"
+  ; ja:prefix "rev"
+  ; ja:namespace "http://purl.org/stuff/rev#"
+  . 
+   
+:sioc a ja:PrefixMapping
+  ; rdfs:label "SIOC Core Ontology"
+  ; ja:prefix "sioc"
+  ; ja:namespace "http://rdfs.org/sioc/ns#"
+  .
+    
+:prism a ja:PrefixMapping
+  ; rdfs:label "PRISM"
+  ; ja:prefix "prism"
+  ; ja:namespace "http://prismstandard.org/namespaces/1.2/basic/"
+  .
+
+
+    

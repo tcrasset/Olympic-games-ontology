@@ -1,1057 +1,2330 @@
-@prefix : <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games> .
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games">
+    <Prefix name="" IRI="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Athlete"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AthleticsSport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BallSport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CombatSport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultiDisciplineCompetition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultiRoundCompetition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultiSport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultiStageCompetition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OlympicGame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OtherSport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Round"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SportCompetition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SummerGame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnitCompetition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterSport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WinterGame"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCompetitor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHost"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRound"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSport"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasUnitCompetition"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFirstPlaceWinnerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isHostOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMedalWinner"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlayedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isRoundOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSecondPlaceWinnerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSportOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isStageOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isThirdPlaceWinnerOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isUnitCompetitionOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#playsSport"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#endsAtDate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBirthdate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBudgetOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCompetitorGender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEquipment"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFirstName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGender"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGroupSetting"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLastName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNationality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumberOfPlayers"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasNumberOfVisitors"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRecords"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasRules"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasWeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isPlayedInCity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#playsSport"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#startsAtDate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#AndyMurray"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Biathlon_Individual"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ChenAisen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ClaressaShields"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cycling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DavidBoudia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Football"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GermanSanchez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HammerThrow"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#HighJump"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JasonKenny"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Judo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LiQian"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#London2012"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RafaelNadal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RogerFederer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ShanePerkins"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sochi2014"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Taekwondo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Triathlon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UsainBolt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Volleyball"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#WarrenWeir"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Waterpolo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#YohanBlake"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#10M_Diving"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#100M_Sprint"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#200M_Sprint"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Athlete"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#playsSport"/>
+            <Class IRI="#Sport"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AthleticsSport"/>
+        <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BallSport"/>
+        <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CombatSport"/>
+        <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiDisciplineCompetition"/>
+        <Class IRI="#SportCompetition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiDisciplineCompetition"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasSport"/>
+            <Class IRI="#Sport"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiRoundCompetition"/>
+        <Class IRI="#SportCompetition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiRoundCompetition"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasRound"/>
+            <Class IRI="#Round"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiSport"/>
+        <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiStageCompetition"/>
+        <Class IRI="#SportCompetition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiStageCompetition"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasStage"/>
+            <Class IRI="#Stage"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OlympicGame"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isHostOf"/>
+            <Class IRI="#SportCompetition"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OtherSport"/>
+        <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Round"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isRoundOf"/>
+            <Class IRI="#MultiRoundCompetition"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportCompetition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasCompetitor"/>
+            <Class IRI="#Athlete"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportCompetition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasHost"/>
+            <Class IRI="#OlympicGame"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SportCompetition"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSport"/>
+            <Class IRI="#Sport"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasUnitCompetition"/>
+            <Class IRI="#UnitCompetition"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stage"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isStageOf"/>
+            <Class IRI="#MultiStageCompetition"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SummerGame"/>
+        <Class IRI="#OlympicGame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnitCompetition"/>
+        <Class IRI="#SportCompetition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterSport"/>
+        <Class IRI="#Sport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WinterGame"/>
+        <Class IRI="#OlympicGame"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Athlete"/>
+        <Class IRI="#OlympicGame"/>
+        <Class IRI="#Round"/>
+        <Class IRI="#Sport"/>
+        <Class IRI="#SportCompetition"/>
+        <Class IRI="#Stage"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MultiDisciplineCompetition"/>
+        <Class IRI="#MultiRoundCompetition"/>
+        <Class IRI="#MultiStageCompetition"/>
+        <Class IRI="#UnitCompetition"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#SummerGame"/>
+        <Class IRI="#WinterGame"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiSport"/>
+        <NamedIndividual IRI="#Biathlon_Individual"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CombatSport"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#OtherSport"/>
+        <NamedIndividual IRI="#Cycling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BallSport"/>
+        <NamedIndividual IRI="#Football"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AthleticsSport"/>
+        <NamedIndividual IRI="#HammerThrow"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AthleticsSport"/>
+        <NamedIndividual IRI="#HighJump"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#JasonKenny"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CombatSport"/>
+        <NamedIndividual IRI="#Judo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#LiQian"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SummerGame"/>
+        <NamedIndividual IRI="#London2012"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#SummerGame"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WinterGame"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CombatSport"/>
+        <NamedIndividual IRI="#Taekwondo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BallSport"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiSport"/>
+        <NamedIndividual IRI="#Triathlon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BallSport"/>
+        <NamedIndividual IRI="#Volleyball"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#WarrenWeir"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WaterSport"/>
+        <NamedIndividual IRI="#Waterpolo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Athlete"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WaterSport"/>
+        <NamedIndividual IRI="#10M_Diving"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#WaterSport"/>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AthleticsSport"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AthleticsSport"/>
+        <NamedIndividual IRI="#200M_Sprint"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiStageCompetition"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiStageCompetition"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiStageCompetition"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiStageCompetition"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#UnitCompetition"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiRoundCompetition"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiRoundCompetition"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <NamedIndividual IRI="#Biathlon_Individual"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+        <NamedIndividual IRI="#Cycling"/>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+        <NamedIndividual IRI="#Football"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+        <NamedIndividual IRI="#HammerThrow"/>
+        <NamedIndividual IRI="#HighJump"/>
+        <NamedIndividual IRI="#JasonKenny"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+        <NamedIndividual IRI="#Judo"/>
+        <NamedIndividual IRI="#LiQian"/>
+        <NamedIndividual IRI="#London2012"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+        <NamedIndividual IRI="#Taekwondo"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+        <NamedIndividual IRI="#Triathlon"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <NamedIndividual IRI="#Volleyball"/>
+        <NamedIndividual IRI="#WarrenWeir"/>
+        <NamedIndividual IRI="#Waterpolo"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+        <NamedIndividual IRI="#10M_Diving"/>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+        <NamedIndividual IRI="#200M_Sprint"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+        <NamedIndividual IRI="#10M_Diving"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+        <NamedIndividual IRI="#10M_Diving"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+        <NamedIndividual IRI="#10M_Diving"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+        <NamedIndividual IRI="#Cycling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#LiQian"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+        <NamedIndividual IRI="#Cycling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+        <NamedIndividual IRI="#200M_Sprint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <NamedIndividual IRI="#London2012"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSport"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <NamedIndividual IRI="#100M_Butterfly"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isStageOf"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#London2012"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSport"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSport"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#10M_Diving"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#WarrenWeir"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#London2012"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSport"/>
+        <NamedIndividual IRI="#Men&apos;s_200M_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#200M_Sprint"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#JasonKenny"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+        <NamedIndividual IRI="#London2012"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <NamedIndividual IRI="#London2012"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSport"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#LiQian"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasHost"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSport"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+        <NamedIndividual IRI="#BoxingMiddleweightWomen"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBirthdate"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1987-05-15T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal>Andy</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHeight"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">191</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal>Murray</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal>GreatBritain</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#playsSport"/>
+        <NamedIndividual IRI="#AndyMurray"/>
+        <Literal>Tennis</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+        <Literal>Chad</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+        <Literal>Le Clos</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#ChadLeCLos"/>
+        <Literal>South Africa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+        <Literal>Chen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+        <Literal>Aisen</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#ChenAisen"/>
+        <Literal>China</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+        <Literal>Claressa</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+        <Literal>Shields</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#ClaressaShields"/>
+        <Literal>UnitedStates</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+        <Literal>Dariga</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+        <Literal>Shakimova</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#DarigaShakimova"/>
+        <Literal>Kazakhstan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+        <Literal>David</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+        <Literal>Boudia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#DavidBoudia"/>
+        <Literal>UnitedStates</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+        <Literal>German</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+        <Literal>Sanchez</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#GermanSanchez"/>
+        <Literal>Mexico</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+        <Literal>Grégory</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+        <Literal>Baugé</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#GrégoryBaugé"/>
+        <Literal>France</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#JasonKenny"/>
+        <Literal>Jason</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#JasonKenny"/>
+        <Literal>Kenny</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#JasonKenny"/>
+        <Literal>GreatBritain</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+        <Literal>Juan Martin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+        <Literal>Del Potro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#JuanMartinDelPotro"/>
+        <Literal>Argentina</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#LiQian"/>
+        <Literal>Li</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#LiQian"/>
+        <Literal>Qian</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#LiQian"/>
+        <Literal>China</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#endsAtDate"/>
+        <NamedIndividual IRI="#London2012"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-07-27T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBudgetOf"/>
+        <NamedIndividual IRI="#London2012"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">15280000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberOfVisitors"/>
+        <NamedIndividual IRI="#London2012"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">471000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isPlayedInCity"/>
+        <NamedIndividual IRI="#London2012"/>
+        <Literal>London</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#startsAtDate"/>
+        <NamedIndividual IRI="#London2012"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-12T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBirthdate"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1985-03-30T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal>Michael</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHeight"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">193</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal>Phelps</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal>UnitedStates</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasWeight"/>
+        <NamedIndividual IRI="#MichaelPhelps"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">88</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+        <Literal>Nouchka</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+        <Literal>Fontijn</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#NouchkaFontijn"/>
+        <Literal>Netherlands</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBirthdate"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1986-06-03T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal>Rafael</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHeight"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">185</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal>Nadal</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal>Spain</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasWeight"/>
+        <NamedIndividual IRI="#RafaelNadal"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">85</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#endsAtDate"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-21T23:59:59</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBudgetOf"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">13200000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberOfVisitors"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">1170000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isPlayedInCity"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+        <Literal>Rio De Janeiro</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#startsAtDate"/>
+        <NamedIndividual IRI="#RioDeJaneiro2016"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-05T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+        <Literal>Roger</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+        <Literal>Federer</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#RogerFederer"/>
+        <Literal>Switzerland</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+        <Literal>Shane</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+        <Literal>Perkins</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#ShanePerkins"/>
+        <Literal>Australia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#endsAtDate"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-23T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBudgetOf"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">5100000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberOfVisitors"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">870000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isPlayedInCity"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+        <Literal>Sochi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#startsAtDate"/>
+        <NamedIndividual IRI="#Sochi2014"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-07T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEquipment"/>
+        <NamedIndividual IRI="#Tennis_Singles"/>
+        <Literal>Racket</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasBirthdate"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">1986-08-21T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal>Usain</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGender"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasHeight"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">195</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal>Bolt</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal>Jamaica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasWeight"/>
+        <NamedIndividual IRI="#UsainBolt"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">94</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#WarrenWeir"/>
+        <Literal>Warren</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#WarrenWeir"/>
+        <Literal>Weir</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#WarrenWeir"/>
+        <Literal>Jamaica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+        <Literal>Yevgeny</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+        <Literal>Korotyshkin</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#YevgenyKorotyshkin"/>
+        <Literal>Russia</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasFirstName"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+        <Literal>Yohan</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasLastName"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+        <Literal>Blake</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNationality"/>
+        <NamedIndividual IRI="#YohanBlake"/>
+        <Literal>Jamaica</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGroupSetting"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+        <Literal>individual</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasNumberOfPlayers"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasRecords"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+        <Literal>Men: Usain Bolt 9.58s (2009)
+Women: Florence Griffith-Joyner 10.49s (1988)</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasRules"/>
+        <NamedIndividual IRI="#100M_Sprint"/>
+        <Literal>The 100 metres, or 100-metre dash, is a sprint race in track and field competitions</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <NamedIndividual IRI="#Men&apos;s_100M_Sprint_XXX_Olympiad"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <NamedIndividual IRI="#Men&apos;s_10M_Diving_XXXI_Olympiad"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <NamedIndividual IRI="#Men&apos;s_Cycling_Sprint_XXX_Olympiad"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <NamedIndividual IRI="#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <Literal>Male</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <NamedIndividual IRI="#Women&apos;s_Boxing_Middleweight_XXXI_Olympiad"/>
+        <Literal>Female</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <ObjectProperty IRI="#hasCompetitor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <ObjectProperty IRI="#hasCompetitor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <ObjectProperty IRI="#hasCompetitor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isFirstPlaceWinnerOf"/>
+        <ObjectProperty IRI="#isMedalWinner"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isMedalWinner"/>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isSecondPlaceWinnerOf"/>
+        <ObjectProperty IRI="#isMedalWinner"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isThirdPlaceWinnerOf"/>
+        <ObjectProperty IRI="#isMedalWinner"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <ObjectProperty IRI="#isFirstPlaceWinnerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <ObjectProperty IRI="#isSecondPlaceWinnerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <ObjectProperty IRI="#isThirdPlaceWinnerOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasCompetitor"/>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasHost"/>
+        <ObjectProperty IRI="#isHostOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasRound"/>
+        <ObjectProperty IRI="#isRoundOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSport"/>
+        <ObjectProperty IRI="#isSportOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasStage"/>
+        <ObjectProperty IRI="#isStageOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasUnitCompetition"/>
+        <ObjectProperty IRI="#isUnitCompetitionOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPlayedBy"/>
+        <ObjectProperty IRI="#playsSport"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasHost"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isHostOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasCompetitor"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasHost"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRound"/>
+        <Class IRI="#MultiRoundCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSport"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStage"/>
+        <Class IRI="#MultiStageCompetition"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFirstPlaceWinnerOf"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isHostOf"/>
+        <Class IRI="#OlympicGame"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMedalWinner"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPlayedBy"/>
+        <Class IRI="#Sport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <Class IRI="#Round"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSecondPlaceWinnerOf"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSportOf"/>
+        <Class IRI="#Sport"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isStageOf"/>
+        <Class IRI="#Stage"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isThirdPlaceWinnerOf"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#playsSport"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAwardedFirstPlaceTo"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAwardedSecondPlaceTo"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAwardedThirdPlaceTo"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasCompetitor"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasHost"/>
+        <Class IRI="#OlympicGame"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRound"/>
+        <Class IRI="#Round"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSport"/>
+        <Class IRI="#Sport"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasStage"/>
+        <Class IRI="#Stage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCompetitorIn"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isFirstPlaceWinnerOf"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isHostOf"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMedalWinner"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlayedBy"/>
+        <Class IRI="#Athlete"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isRoundOf"/>
+        <Class IRI="#MultiRoundCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSecondPlaceWinnerOf"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSportOf"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isStageOf"/>
+        <Class IRI="#MultiStageCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isThirdPlaceWinnerOf"/>
+        <Class IRI="#SportCompetition"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#playsSport"/>
+        <Class IRI="#Sport"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#endsAtDate"/>
+        <Class IRI="#OlympicGame"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBirthdate"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBudgetOf"/>
+        <Class IRI="#OlympicGame"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <Class IRI="#SportCompetition"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEquipment"/>
+        <Class IRI="#Sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFirstName"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasGender"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasGroupSetting"/>
+        <Class IRI="#Sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasHeight"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasLastName"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasNationality"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasNumberOfPlayers"/>
+        <Class IRI="#Sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasNumberOfVisitors"/>
+        <Class IRI="#OlympicGame"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRecords"/>
+        <Class IRI="#Sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasRules"/>
+        <Class IRI="#Sport"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasWeight"/>
+        <Class IRI="#Athlete"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isPlayedInCity"/>
+        <Class IRI="#OlympicGame"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#startsAtDate"/>
+        <Class IRI="#OlympicGame"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#endsAtDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBirthdate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBudgetOf"/>
+        <Datatype abbreviatedIRI="xsd:long"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCompetitorGender"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEquipment"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFirstName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasGender"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasGroupSetting"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHeight"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasLastName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasNationality"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasNumberOfPlayers"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasNumberOfVisitors"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRecords"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasRules"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasWeight"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isPlayedInCity"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#playsSport"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#startsAtDate"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Athlete</IRI>
+        <Literal>An athlete is a person who practices some sport(s).
+Example: the tennis player Rafael Nadal.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AthleticsSport</IRI>
+        <Literal>Athletics sport is the sport of competing in track and field events, including running races and various competitions in jumping and throwing.
+Example: 100M, 400M, Hammer Throw, High Jump.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BallSport</IRI>
+        <Literal>A ball sport is any form of sport which features a ball as part of play.
+Example: football, cricket, baseball, basketball.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CombatSport</IRI>
+        <Literal>A combat sport is a competitive contact sport that usually involves one-on-one combat.
+Example:  boxing, wrestling, fencing, savate.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultiDisciplineCompetition</IRI>
+        <Literal>A competition that incorporates a number of different sports, that is at least 2.
+Example: Athletics competition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultiRoundCompetition</IRI>
+        <Literal>A multi-round competition is a competition organised as a sequence of rounds where the winner advances and the loser gets eliminated.
+Example: the Wimbledon tennis tournament.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultiSport</IRI>
+        <Literal>A multisport is a sport in which athletes compete in multiple athletic disciplines.
+Example: Triathlon (running, swimming, cycling)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultiStageCompetition</IRI>
+        <Literal>A Multi-stage Competition is a competition that is organised as a set of stages.
+Example: the Football World Cup.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OlympicGame</IRI>
+        <Literal>The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Round</IRI>
+        <Literal>A round is one or more competitions that is part of a Multi-Round Competition.
+Example: first round of Wimbledon.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sport</IRI>
+        <Literal>A sport is a phyisical activity in which an individual or team competes against another or others for entertainment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SportCompetition</IRI>
+        <Literal>A sport competition is a competitive sporting event.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stage</IRI>
+        <Literal>A stage is one or more competitions part of a MultiStageCompetition where the N best teams/players only advance in the competition.
+Example: pooling stage of Football World Cup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SummerGame</IRI>
+        <Literal>Summer Game is a kind of Olympic Game consisting only of 
+summer sports.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UnitCompetition</IRI>
+        <Literal>A unit competition is the unit of competition defined by a competition discipline rules. 
+Example: a tennis match or a 100m race.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WaterSport</IRI>
+        <Literal>A water sport is a sport happening in or involving water.
+Example: kanoe, sailing, diving</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WinterGame</IRI>
+        <Literal>Winter Game is a kind of Olympic Game consisting only of winter sports.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#endsAtDate</IRI>
+        <Literal>Starting date of the Olympic game, in datetime format.
+Example: 2012-05-25T23:59:59</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAwardedFirstPlaceTo</IRI>
+        <Literal>A SportCompetition has awarded an Athlete the title of first place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAwardedSecondPlaceTo</IRI>
+        <Literal>A SportCompetition has awarded an Athlete the title of first place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAwardedThirdPlaceTo</IRI>
+        <Literal>A SportCompetition has awarded an Athlete the title of third place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBirthdate</IRI>
+        <Literal>Birth date of a person in datetime format
+Example: 2012-06-03T23:58:58</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasBudgetOf</IRI>
+        <Literal>Total spending for the organisation of the Olympic game</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasCompetitor</IRI>
+        <Literal>A SportCompetition has Athletes that compete in it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEquipment</IRI>
+        <Literal>Equipment used for playing that particular Sport
+Example: racket and ball in Tennis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasFirstName</IRI>
+        <Literal>Firstname of a person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGender</IRI>
+        <Literal>Gender of a person.
+Example: &quot;male&quot; or &quot;female&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasGroupSetting</IRI>
+        <Literal>Group setting of the sport, either &apos;individual&apos; or &apos;collective&apos;
+Example:  100M race is individual, football match is collective</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHeight</IRI>
+        <Literal>Height of a person in cm.
+Example: 190</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasHost</IRI>
+        <Literal>A SportCompetition is hosted by a kind of OlympicGame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasLastName</IRI>
+        <Literal>Last name of a person.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasNumberOfPlayers</IRI>
+        <Literal>Number of players/competitors competing in a typical competition of that sport.
+Example: 22</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasNumberOfVisitors</IRI>
+        <Literal>Number of visitors during the OlympicGames in the hosting city</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRecords</IRI>
+        <Literal>The current record performances of that Sport
+Example: 100M race time by Usain Bolt at 9:58s</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRound</IRI>
+        <Literal>A MultiRoundCompetition has Rounds that are played as part of it</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasRules</IRI>
+        <Literal>Rules of the given Sport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasSport</IRI>
+        <Literal>A SportCompetition has a Sport that is played in that competition
+Ex: Tennis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasStage</IRI>
+        <Literal>A MultiStageCompetition has instances of Stage as competition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasUnitCompetition</IRI>
+        <Literal>A Round or a Stage has UnitCompetitions as part of it.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasWeight</IRI>
+        <Literal>Weight of a person in kg.
+Example: 85</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isCompetitorIn</IRI>
+        <Literal>An Athlete competes in a kind of SportCompetition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isFirstPlaceWinnerOf</IRI>
+        <Literal>An Athlete wins first place in a SportCompetition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isHostOf</IRI>
+        <Literal>An OlympicGame is host to a kind of SportCompetition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPlayedBy</IRI>
+        <Literal>A Sport is played by an Athlete</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPlayedInCity</IRI>
+        <Literal>City in which the Olympic Games are held:
+Example: Rio de Janeiro in 2012</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isRoundOf</IRI>
+        <Literal>A round is part of a MultiRoundCompetition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSecondPlaceWinnerOf</IRI>
+        <Literal>An Athlete wins second place in a SportCompetition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSportOf</IRI>
+        <Literal>A Sport is played in a SportCompetition.
+Ex: Men&apos;s Singles Tennis XXX Olympiad.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isStageOf</IRI>
+        <Literal>A stage is part of a MultiStageCompetition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isThirdPlaceWinnerOf</IRI>
+        <Literal>An Athlete wins third place in a SportCompetition.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isUnitCompetitionOf</IRI>
+        <Literal>A UnitCompetition belongs to a Stage, a Round or is by itself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#playsSport</IRI>
+        <Literal>An Athlete plays a Sport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#startsAtDate</IRI>
+        <Literal>Starting date of the Olympic game, in datetime format.
+Example: 2012-05-08T23:59:59</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
 
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games> rdf:type owl:Ontology .
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedFirstPlaceTo
-:hasAwardedFirstPlaceTo rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :hasCompetitor ;
-                        owl:inverseOf :isFirstPlaceWinnerOf ;
-                        rdfs:domain :SportCompetition ;
-                        rdfs:range :Athlete ;
-                        rdfs:comment "A SportCompetition has awarded an Athlete the title of first place." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedSecondPlaceTo
-:hasAwardedSecondPlaceTo rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf :hasCompetitor ;
-                         owl:inverseOf :isSecondPlaceWinnerOf ;
-                         rdfs:domain :SportCompetition ;
-                         rdfs:range :Athlete ;
-                         rdfs:comment "A SportCompetition has awarded an Athlete the title of first place." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedThirdPlaceTo
-:hasAwardedThirdPlaceTo rdf:type owl:ObjectProperty ;
-                        rdfs:subPropertyOf :hasCompetitor ;
-                        owl:inverseOf :isThirdPlaceWinnerOf ;
-                        rdfs:domain :SportCompetition ;
-                        rdfs:range :Athlete ;
-                        rdfs:comment "A SportCompetition has awarded an Athlete the title of third place." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor
-:hasCompetitor rdf:type owl:ObjectProperty ;
-               owl:inverseOf :isCompetitorIn ;
-               rdfs:domain :SportCompetition ;
-               rdfs:range :Athlete ;
-               rdfs:comment "A SportCompetition has Athletes that compete in it." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost
-:hasHost rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isHostOf ;
-         rdf:type owl:TransitiveProperty ;
-         rdfs:domain :SportCompetition ;
-         rdfs:range :OlympicGame ;
-         rdfs:comment "A SportCompetition is hosted by a kind of OlympicGame" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound
-:hasRound rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isRoundOf ;
-          rdfs:domain :MultiRoundCompetition ;
-          rdfs:range :Round ;
-          rdfs:comment "A MultiRoundCompetition has Rounds that are played as part of it" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport
-:hasSport rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isSportOf ;
-          rdfs:domain :SportCompetition ;
-          rdfs:range :Sport ;
-          rdfs:comment """A SportCompetition has a Sport that is played in that competition
-Ex: Tennis""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage
-:hasStage rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isStageOf ;
-          rdfs:domain :MultiStageCompetition ;
-          rdfs:range :Stage ;
-          rdfs:comment "A MultiStageCompetition has instances of Stage as competition" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasUnitCompetition
-:hasUnitCompetition rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :isUnitCompetitionOf ;
-                    rdfs:comment "A Round or a Stage has UnitCompetitions as part of it." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn
-:isCompetitorIn rdf:type owl:ObjectProperty ;
-                rdfs:domain :Athlete ;
-                rdfs:range :SportCompetition ;
-                rdfs:comment "An Athlete competes in a kind of SportCompetition" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf
-:isFirstPlaceWinnerOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :isMedalWinner ;
-                      rdfs:domain :Athlete ;
-                      rdfs:range :SportCompetition ;
-                      rdfs:comment "An Athlete wins first place in a SportCompetition." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf
-:isHostOf rdf:type owl:ObjectProperty ,
-                   owl:TransitiveProperty ;
-          rdfs:domain :OlympicGame ;
-          rdfs:range :SportCompetition ;
-          rdfs:comment "An OlympicGame is host to a kind of SportCompetition" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isMedalWinner
-:isMedalWinner rdf:type owl:ObjectProperty ;
-               rdfs:subPropertyOf :isCompetitorIn ;
-               rdfs:domain :Athlete ;
-               rdfs:range :SportCompetition .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy
-:isPlayedBy rdf:type owl:ObjectProperty ;
-            owl:inverseOf :playsSport ;
-            rdfs:domain :Sport ;
-            rdfs:range :Athlete ;
-            rdfs:comment "A Sport is played by an Athlete" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundOf
-:isRoundOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :Round ;
-           rdfs:range :MultiRoundCompetition ;
-           rdfs:comment "A round is part of a MultiRoundCompetition" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSecondPlaceWinnerOf
-:isSecondPlaceWinnerOf rdf:type owl:ObjectProperty ;
-                       rdfs:subPropertyOf :isMedalWinner ;
-                       rdfs:domain :Athlete ;
-                       rdfs:range :SportCompetition ;
-                       rdfs:comment "An Athlete wins second place in a SportCompetition." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportOf
-:isSportOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :Sport ;
-           rdfs:range :SportCompetition ;
-           rdfs:comment """A Sport is played in a SportCompetition.
-Ex: Men's Singles Tennis XXX Olympiad.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf
-:isStageOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :Stage ;
-           rdfs:range :MultiStageCompetition ;
-           rdfs:comment "A stage is part of a MultiStageCompetition" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isThirdPlaceWinnerOf
-:isThirdPlaceWinnerOf rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :isMedalWinner ;
-                      rdfs:domain :Athlete ;
-                      rdfs:range :SportCompetition ;
-                      rdfs:comment "An Athlete wins third place in a SportCompetition." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isUnitCompetitionOf
-:isUnitCompetitionOf rdf:type owl:ObjectProperty ;
-                     rdfs:comment "A UnitCompetition belongs to a Stage, a Round or is by itself." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport
-:playsSport rdf:type owl:ObjectProperty ;
-            rdfs:domain :Athlete ;
-            rdfs:range :Sport .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#endsAtDate
-:endsAtDate rdf:type owl:DatatypeProperty ;
-            rdfs:domain :OlympicGame ;
-            rdfs:range xsd:dateTime ;
-            rdfs:comment """Starting date of the Olympic game, in datetime format.
-Example: 2012-05-25T23:59:59""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBirthdate
-:hasBirthdate rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Athlete ;
-              rdfs:range xsd:dateTime ;
-              rdfs:comment """Birth date of a person in datetime format
-Example: 2012-06-03T23:58:58""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBudgetOf
-:hasBudgetOf rdf:type owl:DatatypeProperty ;
-             rdfs:domain :OlympicGame ;
-             rdfs:range xsd:long ;
-             rdfs:comment "Total spending for the organisation of the Olympic game" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitorGender
-:hasCompetitorGender rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :SportCompetition ;
-                     rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasEquipment
-:hasEquipment rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Sport ;
-              rdfs:range xsd:string ;
-              rdfs:comment """Equipment used for playing that particular Sport
-Example: racket and ball in Tennis""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasFirstName
-:hasFirstName rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Athlete ;
-              rdfs:range xsd:string ;
-              rdfs:comment "Firstname of a person." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGender
-:hasGender rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Athlete ;
-           rdfs:range xsd:string ;
-           rdfs:comment """Gender of a person.
-Example: \"male\" or \"female\"""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGroupSetting
-:hasGroupSetting rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Sport ;
-                 rdfs:range xsd:string ;
-                 rdfs:comment """Group setting of the sport, either 'individual' or 'collective'
-Example:  100M race is individual, football match is collective""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHeight
-:hasHeight rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Athlete ;
-           rdfs:range xsd:int ;
-           rdfs:comment """Height of a person in cm.
-Example: 190""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasLastName
-:hasLastName rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Athlete ;
-             rdfs:range xsd:string ;
-             rdfs:comment "Last name of a person." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNationality
-:hasNationality rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Athlete ;
-                rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfPlayers
-:hasNumberOfPlayers rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Sport ;
-                    rdfs:range xsd:int ;
-                    rdfs:comment """Number of players/competitors competing in a typical competition of that sport.
-Example: 22""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfVisitors
-:hasNumberOfVisitors rdf:type owl:DatatypeProperty ;
-                     rdfs:domain :OlympicGame ;
-                     rdfs:range xsd:int ;
-                     rdfs:comment "Number of visitors during the OlympicGames in the hosting city" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRecords
-:hasRecords rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Sport ;
-            rdfs:range xsd:string ;
-            rdfs:comment """The current record performances of that Sport
-Example: 100M race time by Usain Bolt at 9:58s""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRules
-:hasRules rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Sport ;
-          rdfs:range xsd:string ;
-          rdfs:comment "Rules of the given Sport" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasWeight
-:hasWeight rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Athlete ;
-           rdfs:range xsd:int ;
-           rdfs:comment """Weight of a person in kg.
-Example: 85""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedInCity
-:isPlayedInCity rdf:type owl:DatatypeProperty ;
-                rdfs:domain :OlympicGame ;
-                rdfs:range xsd:string ;
-                rdfs:comment """City in which the Olympic Games are held:
-Example: Rio de Janeiro in 2012""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport
-:playsSport rdf:type owl:DatatypeProperty ;
-            rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#startsAtDate
-:startsAtDate rdf:type owl:DatatypeProperty ;
-              rdfs:domain :OlympicGame ;
-              rdfs:range xsd:dateTime ;
-              rdfs:comment """Starting date of the Olympic game, in datetime format.
-Example: 2012-05-08T23:59:59""" .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete
-:Athlete rdf:type owl:Class ;
-         rdfs:subClassOf [ rdf:type owl:Restriction ;
-                           owl:onProperty :playsSport ;
-                           owl:someValuesFrom :Sport
-                         ] ;
-         rdfs:comment """An athlete is a person who practices some sport(s).
-Example: the tennis player Rafael Nadal.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport
-:AthleticsSport rdf:type owl:Class ;
-                rdfs:subClassOf :Sport ;
-                rdfs:comment """Athletics sport is the sport of competing in track and field events, including running races and various competitions in jumping and throwing.
-Example: 100M, 400M, Hammer Throw, High Jump.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport
-:BallSport rdf:type owl:Class ;
-           rdfs:subClassOf :Sport ;
-           rdfs:comment """A ball sport is any form of sport which features a ball as part of play.
-Example: football, cricket, baseball, basketball.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport
-:CombatSport rdf:type owl:Class ;
-             rdfs:subClassOf :Sport ;
-             rdfs:comment """A combat sport is a competitive contact sport that usually involves one-on-one combat.
-Example:  boxing, wrestling, fencing, savate.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition
-:MultiDisciplineCompetition rdf:type owl:Class ;
-                            rdfs:subClassOf :SportCompetition ,
-                                            [ rdf:type owl:Restriction ;
-                                              owl:onProperty :hasSport ;
-                                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                              owl:onClass :Sport
-                                            ] ;
-                            rdfs:comment """A competition that incorporates a number of different sports, that is at least 2.
-Example: Athletics competition.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition
-:MultiRoundCompetition rdf:type owl:Class ;
-                       rdfs:subClassOf :SportCompetition ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :hasRound ;
-                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :Round
-                                       ] ;
-                       rdfs:comment """A multi-round competition is a competition organised as a sequence of rounds where the winner advances and the loser gets eliminated.
-Example: the Wimbledon tennis tournament.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiSport
-:MultiSport rdf:type owl:Class ;
-            rdfs:subClassOf :Sport ;
-            rdfs:comment """A multisport is a sport in which athletes compete in multiple athletic disciplines.
-Example: Triathlon (running, swimming, cycling)""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition
-:MultiStageCompetition rdf:type owl:Class ;
-                       rdfs:subClassOf :SportCompetition ,
-                                       [ rdf:type owl:Restriction ;
-                                         owl:onProperty :hasStage ;
-                                         owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                         owl:onClass :Stage
-                                       ] ;
-                       rdfs:comment """A Multi-stage Competition is a competition that is organised as a set of stages.
-Example: the Football World Cup.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame
-:OlympicGame rdf:type owl:Class ;
-             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :isHostOf ;
-                               owl:someValuesFrom :SportCompetition
-                             ] ;
-             rdfs:comment "The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OtherSport
-:OtherSport rdf:type owl:Class ;
-            rdfs:subClassOf :Sport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
-:Round rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :isRoundOf ;
-                         owl:someValuesFrom :MultiRoundCompetition
-                       ] ;
-       rdfs:comment """A round is one or more competitions that is part of a Multi-Round Competition.
-Example: first round of Wimbledon.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport
-:Sport rdf:type owl:Class ;
-       rdfs:comment "A sport is a phyisical activity in which an individual or team competes against another or others for entertainment." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition
-:SportCompetition rdf:type owl:Class ;
-                  rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasCompetitor ;
-                                    owl:someValuesFrom :Athlete
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasHost ;
-                                    owl:someValuesFrom :OlympicGame
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasSport ;
-                                    owl:someValuesFrom :Sport
-                                  ] ;
-                  rdfs:comment "A sport competition is a competitive sporting event." .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage
-:Stage rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasUnitCompetition ;
-                         owl:someValuesFrom :UnitCompetition
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :isStageOf ;
-                         owl:someValuesFrom :MultiStageCompetition
-                       ] ;
-       rdfs:comment """A stage is one or more competitions part of a MultiStageCompetition where the N best teams/players only advance in the competition.
-Example: pooling stage of Football World Cup""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame
-:SummerGame rdf:type owl:Class ;
-            rdfs:subClassOf :OlympicGame ;
-            owl:disjointWith :WinterGame ;
-            rdfs:comment """Summer Game is a kind of Olympic Game consisting only of 
-summer sports.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition
-:UnitCompetition rdf:type owl:Class ;
-                 rdfs:subClassOf :SportCompetition ;
-                 rdfs:comment """A unit competition is the unit of competition defined by a competition discipline rules. 
-Example: a tennis match or a 100m race.""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport
-:WaterSport rdf:type owl:Class ;
-            rdfs:subClassOf :Sport ;
-            rdfs:comment """A water sport is a sport happening in or involving water.
-Example: kanoe, sailing, diving""" .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WinterGame
-:WinterGame rdf:type owl:Class ;
-            rdfs:subClassOf :OlympicGame ;
-            rdfs:comment "Winter Game is a kind of Olympic Game consisting only of winter sports." .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray
-:AndyMurray rdf:type owl:NamedIndividual ,
-                     :Athlete ;
-            :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> ;
-            :playsSport :Tennis_Singles ;
-            :hasBirthdate "1987-05-15T00:00:00"^^xsd:dateTime ;
-            :hasFirstName "Andy"^^xsd:string ;
-            :hasGender "Male"^^xsd:string ;
-            :hasHeight "191"^^xsd:int ;
-            :hasLastName "Murray"^^xsd:string ;
-            :hasNationality "GreatBritain"^^xsd:string ;
-            :playsSport "Tennis"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Biathlon
-:Biathlon rdf:type owl:NamedIndividual ,
-                   :MultiSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BoxingMiddleweightWomen
-:BoxingMiddleweightWomen rdf:type owl:NamedIndividual ,
-                                  :CombatSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos
-:ChadLeCLos rdf:type owl:NamedIndividual ,
-                     :Athlete ;
-            :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
-            :hasFirstName "Chad"^^xsd:string ;
-            :hasLastName "Le Clos"^^xsd:string ;
-            :hasNationality "South Africa"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChenAisen
-:ChenAisen rdf:type owl:NamedIndividual ,
-                    :Athlete ;
-           :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
-           :hasFirstName "Chen"^^xsd:string ;
-           :hasLastName "Aisen"^^xsd:string ;
-           :hasNationality "China"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ClaressaShields
-:ClaressaShields rdf:type owl:NamedIndividual ,
-                          :Athlete ;
-                 :playsSport :BoxingMiddleweightWomen ;
-                 :hasFirstName "Claressa"^^xsd:string ;
-                 :hasLastName "Shields"^^xsd:string ;
-                 :hasNationality "UnitedStates"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling
-:Cycling rdf:type owl:NamedIndividual ,
-                  :OtherSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#DarigaShakimova
-:DarigaShakimova rdf:type owl:NamedIndividual ,
-                          :Athlete ;
-                 :playsSport :BoxingMiddleweightWomen ;
-                 :hasFirstName "Dariga"^^xsd:string ;
-                 :hasLastName "Shakimova"^^xsd:string ;
-                 :hasNationality "Kazakhstan"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#DavidBoudia
-:DavidBoudia rdf:type owl:NamedIndividual ,
-                      :Athlete ;
-             :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
-             :hasFirstName "David"^^xsd:string ;
-             :hasLastName "Boudia"^^xsd:string ;
-             :hasNationality "UnitedStates"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Football
-:Football rdf:type owl:NamedIndividual ,
-                   :BallSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GermanSanchez
-:GermanSanchez rdf:type owl:NamedIndividual ,
-                        :Athlete ;
-               :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
-               :hasFirstName "German"^^xsd:string ;
-               :hasLastName "Sanchez"^^xsd:string ;
-               :hasNationality "Mexico"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GrégoryBaugé
-:GrégoryBaugé rdf:type owl:NamedIndividual ,
-                       :Athlete ;
-              :playsSport :Cycling ;
-              :hasFirstName "Grégory"^^xsd:string ;
-              :hasLastName "Baugé"^^xsd:string ;
-              :hasNationality "France"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HammerThrow
-:HammerThrow rdf:type owl:NamedIndividual ,
-                      :AthleticsSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HighJump
-:HighJump rdf:type owl:NamedIndividual ,
-                   :AthleticsSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JasonKenny
-:JasonKenny rdf:type owl:NamedIndividual ,
-                     :Athlete ;
-            :hasFirstName "Jason"^^xsd:string ;
-            :hasLastName "Kenny"^^xsd:string ;
-            :hasNationality "GreatBritain"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JuanMartinDelPotro
-:JuanMartinDelPotro rdf:type owl:NamedIndividual ,
-                             :Athlete ;
-                    :playsSport :Tennis_Singles ;
-                    :hasFirstName "Juan Martin"^^xsd:string ;
-                    :hasLastName "Del Potro"^^xsd:string ;
-                    :hasNationality "Argentina"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Judo
-:Judo rdf:type owl:NamedIndividual ,
-               :CombatSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#LiQian
-:LiQian rdf:type owl:NamedIndividual ,
-                 :Athlete ;
-        :playsSport :BoxingMiddleweightWomen ;
-        :hasFirstName "Li"^^xsd:string ;
-        :hasLastName "Qian"^^xsd:string ;
-        :hasNationality "China"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012
-:London2012 rdf:type owl:NamedIndividual ,
-                     :SummerGame ;
-            :endsAtDate "2012-07-27T00:00:00"^^xsd:dateTime ;
-            :hasBudgetOf "15280000000"^^xsd:long ;
-            :hasNumberOfVisitors "471000"^^xsd:int ;
-            :isPlayedInCity "London"^^xsd:string ;
-            :startsAtDate "2012-08-12T00:00:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MichaelPhelps
-:MichaelPhelps rdf:type owl:NamedIndividual ,
-                        :Athlete ;
-               :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> ;
-               :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
-               :hasBirthdate "1985-03-30T00:00:00"^^xsd:dateTime ;
-               :hasFirstName "Michael"^^xsd:string ;
-               :hasGender "Male"^^xsd:string ;
-               :hasHeight "193"^^xsd:int ;
-               :hasLastName "Phelps"^^xsd:string ;
-               :hasNationality "UnitedStates"^^xsd:string ;
-               :hasWeight "88"^^xsd:int .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#NouchkaFontijn
-:NouchkaFontijn rdf:type owl:NamedIndividual ,
-                         :Athlete ;
-                :playsSport :BoxingMiddleweightWomen ;
-                :hasFirstName "Nouchka"^^xsd:string ;
-                :hasLastName "Fontijn"^^xsd:string ;
-                :hasNationality "Netherlands"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RafaelNadal
-:RafaelNadal rdf:type owl:NamedIndividual ,
-                      :Athlete ;
-             :playsSport :Tennis_Singles ;
-             :hasBirthdate "1986-06-03T00:00:00"^^xsd:dateTime ;
-             :hasFirstName "Rafael"^^xsd:string ;
-             :hasGender "Male"^^xsd:string ;
-             :hasHeight "185"^^xsd:int ;
-             :hasLastName "Nadal"^^xsd:string ;
-             :hasNationality "Spain"^^xsd:string ;
-             :hasWeight "85"^^xsd:int .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RioDeJaneiro2016
-:RioDeJaneiro2016 rdf:type owl:NamedIndividual ,
-                           :SummerGame ;
-                  :endsAtDate "2012-08-21T23:59:59"^^xsd:dateTime ;
-                  :hasBudgetOf "13200000000"^^xsd:long ;
-                  :hasNumberOfVisitors "1170000"^^xsd:int ;
-                  :isPlayedInCity "Rio De Janeiro"^^xsd:string ;
-                  :startsAtDate "2012-08-05T00:00:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RogerFederer
-:RogerFederer rdf:type owl:NamedIndividual ,
-                       :Athlete ;
-              :playsSport :Tennis_Singles ;
-              :hasFirstName "Roger"^^xsd:string ;
-              :hasLastName "Federer"^^xsd:string ;
-              :hasNationality "Switzerland"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ShanePerkins
-:ShanePerkins rdf:type owl:NamedIndividual ,
-                       :Athlete ;
-              :playsSport :Cycling ;
-              :hasFirstName "Shane"^^xsd:string ;
-              :hasLastName "Perkins"^^xsd:string ;
-              :hasNationality "Australia"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sochi2014
-:Sochi2014 rdf:type owl:NamedIndividual ,
-                    :WinterGame ;
-           :endsAtDate "2014-02-23T00:00:00"^^xsd:dateTime ;
-           :hasBudgetOf "5100000000"^^xsd:long ;
-           :hasNumberOfVisitors "870000"^^xsd:int ;
-           :isPlayedInCity "Sochi"^^xsd:string ;
-           :startsAtDate "2014-02-07T00:00:00"^^xsd:dateTime .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Taekwondo
-:Taekwondo rdf:type owl:NamedIndividual ,
-                    :CombatSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles
-:Tennis_Singles rdf:type owl:NamedIndividual ,
-                         :BallSport ;
-                :hasEquipment "Racket"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Triathlon
-:Triathlon rdf:type owl:NamedIndividual ,
-                    :MultiSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt
-:UsainBolt rdf:type owl:NamedIndividual ,
-                    :Athlete ;
-           :isCompetitorIn <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> ;
-           :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
-           :hasBirthdate "1986-08-21T00:00:00"^^xsd:dateTime ;
-           :hasFirstName "Usain"^^xsd:string ;
-           :hasGender "Male"^^xsd:string ;
-           :hasHeight "195"^^xsd:int ;
-           :hasLastName "Bolt"^^xsd:string ;
-           :hasNationality "Jamaica" ;
-           :hasWeight "94"^^xsd:int .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Volleyball
-:Volleyball rdf:type owl:NamedIndividual ,
-                     :BallSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WarrenWeir
-:WarrenWeir rdf:type owl:NamedIndividual ,
-                     :Athlete ;
-            :hasFirstName "Warren"^^xsd:string ;
-            :hasLastName "Weir"^^xsd:string ;
-            :hasNationality "Jamaica"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo
-:Waterpolo rdf:type owl:NamedIndividual ,
-                    :WaterSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YevgenyKorotyshkin
-:YevgenyKorotyshkin rdf:type owl:NamedIndividual ,
-                             :Athlete ;
-                    :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
-                    :hasFirstName "Yevgeny"^^xsd:string ;
-                    :hasLastName "Korotyshkin"^^xsd:string ;
-                    :hasNationality "Russia"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YohanBlake
-:YohanBlake rdf:type owl:NamedIndividual ,
-                     :Athlete ;
-            :playsSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> ;
-            :hasFirstName "Yohan"^^xsd:string ;
-            :hasLastName "Blake"^^xsd:string ;
-            :hasNationality "Jamaica"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> rdf:type owl:NamedIndividual ,
-                                                                                              :WaterSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> rdf:type owl:NamedIndividual ,
-                                                                                                  :WaterSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> rdf:type owl:NamedIndividual ,
-                                                                                               :AthleticsSport ;
-                                                                                      :hasGroupSetting "individual"^^xsd:string ;
-                                                                                      :hasNumberOfPlayers "8"^^xsd:int ;
-                                                                                      :hasRecords """Men: Usain Bolt 9.58s (2009)
-Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
-                                                                                      :hasRules "The 100 metres, or 100-metre dash, is a sprint race in track and field competitions"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> rdf:type owl:NamedIndividual ,
-                                                                                               :AthleticsSport .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                              :MultiStageCompetition ;
-                                                                                                                     :hasAwardedFirstPlaceTo :MichaelPhelps ;
-                                                                                                                     :hasAwardedSecondPlaceTo :ChadLeCLos ;
-                                                                                                                     :hasAwardedThirdPlaceTo :YevgenyKorotyshkin ;
-                                                                                                                     :hasHost :London2012 ;
-                                                                                                                     :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly> ;
-                                                                                                                     :hasCompetitorGender "Male"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                                          :Stage ;
-                                                                                                                                 :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                                          :Stage ;
-                                                                                                                                 :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                                               :Stage ;
-                                                                                                                                      :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                                               :Stage ;
-                                                                                                                                      :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                            :Stage ;
-                                                                                                                   :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                            :Stage ;
-                                                                                                                   :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                                   :Stage ;
-                                                                                                                          :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage> rdf:type owl:NamedIndividual ,
-                                                                                                                                :Stage ;
-                                                                                                                       :isStageOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                  :MultiStageCompetition ;
-                                                                                                         :hasAwardedFirstPlaceTo :UsainBolt ;
-                                                                                                         :hasHost :London2012 ;
-                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint> ;
-                                                                                                         :hasCompetitorGender "Male"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                  :MultiStageCompetition ;
-                                                                                                         :hasAwardedFirstPlaceTo :ChenAisen ;
-                                                                                                         :hasAwardedSecondPlaceTo :GermanSanchez ;
-                                                                                                         :hasAwardedThirdPlaceTo :DavidBoudia ;
-                                                                                                         :hasHost :RioDeJaneiro2016 ;
-                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving> ;
-                                                                                                         :hasCompetitorGender "Male"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_200M_Sprint_XXX_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_200M_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                  :MultiStageCompetition ;
-                                                                                                         :hasAwardedFirstPlaceTo :UsainBolt ;
-                                                                                                         :hasAwardedSecondPlaceTo :YohanBlake ;
-                                                                                                         :hasAwardedThirdPlaceTo :WarrenWeir ;
-                                                                                                         :hasHost :London2012 ;
-                                                                                                         :hasSport <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                     :UnitCompetition ;
-                                                                                                            :hasAwardedFirstPlaceTo :JasonKenny ;
-                                                                                                            :hasAwardedSecondPlaceTo :GrégoryBaugé ;
-                                                                                                            :hasAwardedThirdPlaceTo :ShanePerkins ;
-                                                                                                            :hasHost :London2012 ;
-                                                                                                            :hasCompetitorGender "Male"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                     :MultiRoundCompetition ;
-                                                                                                            :hasAwardedFirstPlaceTo :AndyMurray ;
-                                                                                                            :hasAwardedSecondPlaceTo :RogerFederer ;
-                                                                                                            :hasAwardedThirdPlaceTo :JuanMartinDelPotro ;
-                                                                                                            :hasHost :London2012 ;
-                                                                                                            :hasSport :Tennis_Singles ;
-                                                                                                            :hasCompetitorGender "Male"^^xsd:string .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round> rdf:type owl:NamedIndividual ,
-                                                                                                                              :Round ;
-                                                                                                                     :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round> rdf:type owl:NamedIndividual ,
-                                                                                                                              :Round ;
-                                                                                                                     :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_64_Round
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_64_Round> rdf:type owl:NamedIndividual ,
-                                                                                                                              :Round ;
-                                                                                                                     :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round> rdf:type owl:NamedIndividual ,
-                                                                                                                                 :Round ;
-                                                                                                                        :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round> rdf:type owl:NamedIndividual ,
-                                                                                                                                        :Round ;
-                                                                                                                               :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round> rdf:type owl:NamedIndividual ,
-                                                                                                                                     :Round ;
-                                                                                                                            :isRoundOf <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad> .
-
-
-###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Women's_Boxing_Middleweight_XXXI_Olympiad
-<http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Women's_Boxing_Middleweight_XXXI_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                             :MultiRoundCompetition ;
-                                                                                                                    :hasAwardedFirstPlaceTo :ClaressaShields ,
-                                                                                                                                            :LiQian ;
-                                                                                                                    :hasAwardedSecondPlaceTo :NouchkaFontijn ;
-                                                                                                                    :hasHost :RioDeJaneiro2016 ;
-                                                                                                                    :hasSport :BoxingMiddleweightWomen ;
-                                                                                                                    :hasCompetitorGender "Female"^^xsd:string .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-:playsSport rdfs:comment "An Athlete plays a Sport" .
-
-
-#################################################################
-#    General axioms
-#################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Athlete
-                :OlympicGame
-                :Round
-                :Sport
-                :SportCompetition
-                :Stage
-              )
-] .
-
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :MultiDisciplineCompetition
-                :MultiRoundCompetition
-                :MultiStageCompetition
-                :UnitCompetition
-              )
-] .
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :AndyMurray
-                        :Biathlon
-                        :BoxingMiddleweightWomen
-                        :ChadLeCLos
-                        :ChenAisen
-                        :ClaressaShields
-                        :Cycling
-                        :DarigaShakimova
-                        :DavidBoudia
-                        :Football
-                        :GermanSanchez
-                        :GrégoryBaugé
-                        :HammerThrow
-                        :HighJump
-                        :JasonKenny
-                        :JuanMartinDelPotro
-                        :Judo
-                        :LiQian
-                        :London2012
-                        :MichaelPhelps
-                        :NouchkaFontijn
-                        :RafaelNadal
-                        :RioDeJaneiro2016
-                        :RogerFederer
-                        :ShanePerkins
-                        :Sochi2014
-                        :Taekwondo
-                        :Tennis_Singles
-                        :Triathlon
-                        :UsainBolt
-                        :Volleyball
-                        :WarrenWeir
-                        :Waterpolo
-                        :YevgenyKorotyshkin
-                        :YohanBlake
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#10M_Diving>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#200M_Sprint>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Final_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_Heats_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_QuarterFinal_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Race_XXX_Olympiad_SemiFinal_Stage>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_100M_Sprint_XXX_Olympiad>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_10M_Diving_XXXI_Olympiad>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_200M_Sprint_XXX_Olympiad>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_16_Round>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_32_Round>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_64_Round>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_Final_Round>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Singles_Tennis_XXX_Olympiad_SemiFinal_Round>
-                        <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Women's_Boxing_Middleweight_XXXI_Olympiad>
-                      )
-] .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

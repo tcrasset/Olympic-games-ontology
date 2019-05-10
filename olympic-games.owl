@@ -398,6 +398,11 @@ Example: the Football World Cup.""" .
              rdfs:comment "The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions." .
 
 
+###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OtherSport
+:OtherSport rdf:type owl:Class ;
+            rdfs:subClassOf :Sport .
+
+
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round
 :Round rdf:type owl:Class ;
        rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -528,7 +533,7 @@ Example: kanoe, sailing, diving""" .
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling
 :Cycling rdf:type owl:NamedIndividual ,
-                  :Sport .
+                  :OtherSport .
 
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#DarigaShakimova
@@ -879,7 +884,7 @@ Women: Florence Griffith-Joyner 10.49s (1988)"""^^xsd:string ;
 
 ###  http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad
 <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men's_Cycling_Sprint_XXX_Olympiad> rdf:type owl:NamedIndividual ,
-                                                                                                                     :SportCompetition ;
+                                                                                                                     :UnitCompetition ;
                                                                                                             :hasAwardedFirstPlaceTo :JasonKenny ;
                                                                                                             :hasAwardedSecondPlaceTo :GrégoryBaugé ;
                                                                                                             :hasAwardedThirdPlaceTo :ShanePerkins ;

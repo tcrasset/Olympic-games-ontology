@@ -1,0 +1,49 @@
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+
+@prefix ja:         <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix jr:         <http://jena.hpl.hp.com/2003/08/Assembler.ReificationMode#> .
+
+@prefix dc:         <http://purl.org/dc/elements/1.1/> .
+@prefix eg:         <http://www.example.org/> .
+
+# 
+# dm - ont document manager
+# lm - LocationMapper
+#
+@prefix dm:         <http://jena.hpl.hp.com/schemas/2003/03/ont-manager#> .
+@prefix lm:         <http://jena.hpl.hp.com/2004/08/location-mapping#> .
+
+@prefix :           <#> .
+
+<>  rdfs:comment     "Test data for Twinkle Datasources" ;
+    dc:creator       "Leigh Dodds" ;
+    dc:title         "Test data for Twinkle Datasources" ;
+    dc:date          "2007-09-13" ;
+    dc:format        "RDF" ;
+    dc:identifier    :
+    .
+
+# Memory Model, with Local File
+eg:local a ja:MemoryModel;
+	rdfs:label "Memory Model".
+
+eg:remove a ja:MemoryModel
+    ; ja:content [ja:externalContent <http://www.ldodds.com/ldodds.rdf>]
+    ; rdfs:label "Memory Model with Remote"
+    .
+
+# Database Model
+        
+eg:database-example a ja:RDBModel
+    ; ja:modelName "Thunderbird3"
+    ; ja:connection eg:connection
+    ; rdfs:label "Database Model"
+    .
+            
+eg:connection
+    ja:dbURL <jdbc:mysql://localhost/test>
+    ; ja:dbType "MySQL"
+    ; ja:dbUser "cjd"
+    .  

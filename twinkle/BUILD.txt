@@ -1,0 +1,13 @@
+
+To build the classes, tests and javadoc use the provided Ant 
+build script (build.xml) in this directory.
+
+For Ant installation instructions visit http://jakarta.apache.org/ant.
+
+Type the following to get a complete list of targets:
+
+ant -projecthelp
+
+All required libraries are already provided in the lib directory of 
+this project.
+      

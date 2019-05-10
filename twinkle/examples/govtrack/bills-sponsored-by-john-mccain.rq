@@ -1,0 +1,4 @@
+PREFIX people: <http://www.rdfabout.com/rdf/usgov/congress/people/>
+PREFIX bill: <tag:govshare.info,2005:rdf/usbill/>
+PREFIX dc:  <http://purl.org/dc/elements/1.1/>
+SELECT * WHERE { [] dc:title ?billtitle; bill:sponsor people:M000303; bill:congress "109" . }

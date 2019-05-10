@@ -1,0 +1,11 @@
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX rss: <http://purl.org/rss/1.0/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+SELECT ?title ?author
+WHERE {
+ ?item a rss:item
+   ; dc:creator ?author
+   ; rss:title ?title
+   ; dc:date ?date
+}
+ORDER BY (?date)

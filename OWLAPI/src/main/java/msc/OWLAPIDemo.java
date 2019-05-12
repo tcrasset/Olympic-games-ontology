@@ -27,16 +27,38 @@ public class OWLAPIDemo {
 			File fileOUT = new File(newOntologyFilename);
 			manager = OWLManager.createOWLOntologyManager();
 			
+			
 			// Load ontology from file
-			oldOntology = manager.loadOntologyFromOntologyDocument(fileIN);						
+			System.out.println("");
+			System.out.println("=========================LOADING ONTOLOGY========================");
+
+			oldOntology = manager.loadOntologyFromOntologyDocument(fileIN);		
+			System.out.println(oldOntology);
+			
 			oldontologyIRI = oldOntology.getOntologyID().getOntologyIRI();
 			dataFactory = manager.getOWLDataFactory();
+			
+			// Create hermit reasoner with the OWLReasoner interface
+			OWLReasoner reasoner = new Reasoner.ReasonerFactory().createNonBufferingReasoner(oldOntology);
+			reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
 			
 			/*
 			 * 
 			 * ADD A SPORTCOMPETITION TO THE ONTOLOGY
 			 * 
 			 */
+			System.out.println("");
+			System.out.println("================================================================");
+			System.out.println("==============ADD A SPORTCOMPETITION TO THE ONTOLOGY============");
+			System.out.println("================================================================");
+			System.out.println("");
+			
+			// Get instances from SportCompetition and its subclasses
+			System.out.println("\nInstances of SportCompetition BEFORE addition to the Ontology :\n");
+			reasoner.getInstances(dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#SportCompetition")),false)
+					.forEach(System.out::println);
+			
+
 		    
 		    // Get the relevant classes stores in the loaded ontology
 		    OWLClass unitCompetitionClass = dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#UnitCompetition"));
@@ -73,20 +95,28 @@ public class OWLAPIDemo {
             
             OWLDocumentFormat format = manager.getOntologyFormat(oldOntology);
             manager.saveOntology(oldOntology, format, IRI.create(fileOUT.toURI()));
+			System.out.println("=========================SAVING ONTOLOGY========================");
 			System.out.println(oldOntology);
 			
+			// Get instances from SportCompetition and its subclasses
+			System.out.println("\nInstances of SportCompetition AFTER addition of "
+					+ "#Mens_Individual_Biathlon_XXII_Winter Olympiad to the Ontology : \n");
+			reasoner.getInstances(dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#SportCompetition")),false)
+					.forEach(System.out::println);
 			
-			
+			System.out.println("");
+			System.out.println("================================================================");
+			System.out.println("===================== OTHER REASONING ==========================");
+			System.out.println("================================================================");
+			System.out.println("");
+
 			/*
 			 * 
 			 * REASONER
 			 * 
 			 */
 			
-			// Create hermit reasoner with the OWLReasoner interface
-			OWLReasoner reasoner = new Reasoner.ReasonerFactory().createNonBufferingReasoner(oldOntology);
-			reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY);
-			
+
 			// Get subclasses of Sport
 			System.out.println("\nSubclasses of Sport :");
 			reasoner.getSubClasses(dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#Sport")), false)
@@ -97,11 +127,7 @@ public class OWLAPIDemo {
 			reasoner.getSubClasses(dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#SportCompetition")), false)
 					.forEach(System.out::println);
 			
-			// Get instances from SportCompetition and its subclasses
-			System.out.println("\nInstances of SportCompetition :");
-			reasoner.getInstances(dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#SportCompetition")),false)
-					.forEach(System.out::println);
-			
+	
 			// Get instances from Sport and its subclasses
 			System.out.println("\nInstances of Sport :");
 			reasoner.getInstances(dataFactory.getOWLClass(IRI.create(oldontologyIRI.get() + "#Sport")),false)

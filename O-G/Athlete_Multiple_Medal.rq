@@ -5,7 +5,9 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT ?athlete (COUNT(?sportCompetition) AS ?medalCount) WHERE
 {
- ?athlete :isMedalWinner ?sportCompetition 
+ ?athlete :isMedalWinner ?sportCompetition .
+ ?sportCompetition :hasSport ?sport .
+ ?sport a :AthleticsSport .
 } 
 GROUP BY ?athlete 
 HAVING(COUNT(?sportCompetition) > 1)

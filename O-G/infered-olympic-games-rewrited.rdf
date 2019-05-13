@@ -102,6 +102,16 @@ Example: Triathlon (running, swimming, cycling)</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
     </owl:disjointWith>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >2</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
     </owl:disjointWith>
@@ -118,16 +128,6 @@ Example: Athletics competition.</rdfs:comment>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
     </owl:disjointWith>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onClass rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
-        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >2</owl:minQualifiedCardinality>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OtherSport"/>
     </owl:disjointWith>
@@ -220,6 +220,8 @@ Example: kanoe, sailing, diving</rdfs:comment>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
     </owl:disjointWith>
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
+    <rdfs:comment>A round is one or more competitions that is part of a Multi-Round Competition.
+Example: first round of Wimbledon.</rdfs:comment>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:someValuesFrom>
@@ -230,8 +232,6 @@ Example: kanoe, sailing, diving</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:comment>A round is one or more competitions that is part of a Multi-Round Competition.
-Example: first round of Wimbledon.</rdfs:comment>
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame"/>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition"/>
@@ -312,6 +312,14 @@ Example: a tennis match or a 100m race.</rdfs:comment>
   </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete">
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
     <owl:disjointWith>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
@@ -340,14 +348,6 @@ Example: the tennis player Rafael Nadal.</rdfs:comment>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
     </owl:disjointWith>
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition"/>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport"/>
-        </owl:onProperty>
-      </owl:Restriction>
-    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage">
     <rdfs:comment>A stage is one or more competitions part of a MultiStageCompetition where the N best teams/players only advance in the competition.
@@ -376,12 +376,6 @@ Example: pooling stage of Football World Cup</rdfs:comment>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition">
-    <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame"/>
-    <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
-    <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
-    <owl:disjointWith>
-      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OtherSport"/>
-    </owl:disjointWith>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onClass rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
@@ -392,6 +386,12 @@ Example: pooling stage of Football World Cup</rdfs:comment>
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame"/>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OtherSport"/>
+    </owl:disjointWith>
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
     <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
     <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
@@ -1489,14 +1489,6 @@ Women: Florence Griffith-Joyner 10.49s (1988)</olympic-games:hasRecords>
       <rdf:first rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray"/>
     </owl:distinctMembers>
   </owl:AllDifferent>
-  <owl:AllDisjointClasses>
-    <owl:members rdf:parseType="Collection">
-      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
-      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition"/>
-    </owl:members>
-  </owl:AllDisjointClasses>
   <olympic-games:MultiStageCompetition rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Sprint_XXXI_Olympiad">
     <olympic-games:hasCompetitorGender>Male</olympic-games:hasCompetitorGender>
     <olympic-games:hasHost rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012"/>
@@ -1512,6 +1504,14 @@ Women: Florence Griffith-Joyner 10.49s (1988)</olympic-games:hasRecords>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
       <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+      <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition"/>
     </owl:members>
   </owl:AllDisjointClasses>
 </rdf:RDF>

@@ -6,5 +6,5 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 SELECT DISTINCT ?sport WHERE 
 {
  ?sportCompetiton :hasSport ?sport.
- ?sportCompetition :hasHost :London2012
+ ?sportCompetition :hasHost :RioDeJaneiro2016
 }

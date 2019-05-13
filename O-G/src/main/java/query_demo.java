@@ -16,7 +16,7 @@ import org.apache.jena.query.ResultSet;
 public class query_demo {
 
 	public static void main(String[] args) throws IOException {
-		// Open the bloggers RDF graph from the filesystem
+		// Open the RDF graph from the filesystem
 		InputStream in = new FileInputStream(new File("infered-olympic-games.rdf"));
 		String IRI = "http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#";
 		// Create an empty in‑memory model and populate it from the graph
@@ -24,20 +24,25 @@ public class query_demo {
 		model.read(in,null); // null base URI, since model URIs are absolute
 		in.close();
 		
-		query_model(model, "100MSprint_Rules.rq");
-		query_model(model, "Athlete_Multiple_Medal.rq");
+		
 		query_model(model, "HeightPhelps.rq");
-		query_model(model, "nationality.rq");
-		query_model(model, "nb_gold_USA_London.rq");
+		query_model(model, "100MSprint_Rules.rq");
+		query_model(model, "winner_Tennis_2012.rq");
 		query_model(model, "Sport_Rio.rq");
 		query_model(model, "Winner_2012.rq");
-		query_model(model, "winner_Tennis_2012.rq");
 		
+		query_model(model, "nb_medal_Jamaica_2012.rq");
+		query_model(model, "nb_medal_bolt.rq");
+		query_model(model, "Athlete_Multiple_Medal.rq");
+		query_model(model, "nationality.rq");
+		
+
 		// Create a new query
 		query_model(model, "nb_medal_bolt.rq");
 		
 		// Add a individual
 		Resource sprintRio = model.createResource(IRI + "Men's_100M_Sprint_XXXI_Olympiad");
+		// Add his property
 		sprintRio.addProperty(RDF.type, model.getResource(IRI+"MultiStageCompetition"));
 		sprintRio.addProperty(model.getProperty(IRI+"hasAwardedSecondPlaceTo"), model.getResource(IRI+"UsainBolt"));
 		sprintRio.addProperty(model.getProperty(IRI+"hasCompetitor"), model.getResource(IRI+"UsainBolt"));
@@ -51,23 +56,28 @@ public class query_demo {
 		// and add a new one
 		//Query the podium of 200M sprint of London 2012
 		query_model(model, "podium_200M_London.rq");
+		
 		// Change the first and second place
 		Resource sprintLondon = model.getResource(IRI + "Men's_200M_Sprint_XXX_Olympiad");
 		sprintLondon.removeAll(model.getProperty(IRI+"hasAwardedFirstPlaceTo"));
 		sprintLondon.removeAll(model.getProperty(IRI+"hasAwardedSecondPlaceTo"));
 		sprintLondon.addProperty(model.getProperty(IRI+"hasAwardedFirstPlaceTo"), model.getResource(IRI+"YohanBlake"));
 		sprintLondon.addProperty(model.getProperty(IRI+"hasAwardedSecondPlaceTo"), model.getResource(IRI+"UsainBolt"));
+		
 		//Do the same query
 		query_model(model, "podium_200M_London.rq");
 		
 		
 		//Remove the Men's 100M Sprint of London 2012
 		query_model(model, "Winner_100M_2012.rq");
+		
 		Resource sprintLondon100 = model.createResource(IRI + "Men's_100M_Sprint_XXX_Olympiad");
 		//Remove all the statements where the resource is the subject
 		model.removeAll(sprintLondon100, null, null);
 		//Remove all the statements where the resource is the object
 		model.removeAll(null, null, sprintLondon100);
+		
+		
 		query_model(model, "Winner_100M_2012.rq");
 		
 		

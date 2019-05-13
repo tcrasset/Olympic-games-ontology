@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games">
-    <Prefix name="" IRI="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -459,13 +459,6 @@
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#hasSport"/>
             <Class IRI="#Sport"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Stage"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasUnitCompetition"/>
-            <Class IRI="#UnitCompetition"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -2109,8 +2102,7 @@ Example: pooling stage of Football World Cup</Literal>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>#SummerGame</IRI>
-        <Literal>Summer Game is a kind of Olympic Game consisting only of 
-summer sports.</Literal>
+        <Literal>Summer Game is a kind of Olympic Game consisting only of summer sports.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>

@@ -1,0 +1,9 @@
+PREFIX : <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#>
+
+
+SELECT (COUNT(?sportCompetition) AS ?nb_medal) WHERE
+{
+ ?athlete :hasNationality "Jamaica" .
+ ?sportCompetition :hasHost :London2012 .
+ ?athlete :isMedalWinner ?sportCompetition
+}

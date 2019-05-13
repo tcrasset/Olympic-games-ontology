@@ -1,0 +1,67 @@
+{
+  "sources": [
+    {
+      "web": "http://www.uniprot.org/", 
+      "name": "Swiss Institute of Bioinformatics"
+    }
+  ], 
+  "version": "2011_10", 
+  "description": "Data exposed: a large life sciences data set about proteins and their function.\r\n", 
+  "license": {
+    "url": "http://www.opendefinition.org/licenses/cc-by", 
+    "type": "cc-by", 
+    "title": "Creative Commons Attribution"
+  }, 
+  "title": "UniProt", 
+  "keywords": [
+    "deref-vocab", 
+    "format-rdf", 
+    "format-uniprot", 
+    "lifesciences", 
+    "linkeddata", 
+    "lod", 
+    "lodcloud-diagram-2011-09-19", 
+    "lodcloud-diagram-2014-08-30", 
+    "lodcloud.nolinks", 
+    "published-by-producer"
+  ], 
+  "resources": [
+    {
+      "path": "http://ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/rdf/void.rdf", 
+      "title": "FTP", 
+      "description": "Download", 
+      "name": "ftp", 
+      "format": "RDF"
+    }, 
+    {
+      "path": "http://purl.uniprot.org/citations/12116199", 
+      "description": "Example citation", 
+      "name": "9e58ab7a-38df-45b4-b1bb-6849c1d8399e"
+    }, 
+    {
+      "path": "http://purl.uniprot.org/uniprot/Q5VVX1", 
+      "description": "Example protein", 
+      "name": "48706d16-9af5-4065-90a6-b13e3bd75988"
+    }, 
+    {
+      "path": "http://purl.uniprot.org/core/", 
+      "description": "Vocabulary (OWL)", 
+      "name": "22b576ce-ffbd-4a31-a169-3020fca0843a"
+    }, 
+    {
+      "path": "http://sparql.uniprot.org", 
+      "title": "SPARQL endpoint", 
+      "name": "sparql-endpoint", 
+      "format": "api/sparql"
+    }
+  ], 
+  "author": {
+    "email": "help@uniprot.org"
+  }, 
+  "extras": {
+    "triples": 13081788247, 
+    "namespace": "http://purl.uniprot.org/", 
+    "links:go": 183549278
+  }, 
+  "name": "uniprot"
+}

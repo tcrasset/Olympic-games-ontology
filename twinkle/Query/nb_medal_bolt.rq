@@ -1,0 +1,11 @@
+PREFIX : <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#>
+
+SELECT (COUNT(?goldSC) AS ?nbGold) (COUNT(?silverSC) AS ?nbSilver) (COUNT(?bronzeSC) AS ?nbBronze) WHERE
+{
+ ?athlete :hasLastName "Bolt".
+ {?goldSC :hasAwardedFirstPlaceTo ?athlete}
+ UNION
+ {?silverSC :hasAwardedSecondPlaceTo ?athlete}
+ UNION
+ {?bronzeSC :hasAwardedThirdPlaceTo ?athlete}
+}

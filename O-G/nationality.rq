@@ -1,0 +1,7 @@
+PREFIX : <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#>
+
+SELECT ?sportCompetition (COUNT(?nationality) AS ?NumberNat) WHERE
+{
+ ?athlete :hasNationality ?nationality.
+ ?athlete :isCompetitorIn ?sportCompetition
+} GROUP BY ?sportCompetition

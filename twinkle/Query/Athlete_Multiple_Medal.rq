@@ -1,0 +1,12 @@
+PREFIX : <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+SELECT ?athlete (COUNT(?sportCompetition) AS ?medalCount) WHERE
+{
+ ?athlete :isMedalWinner ?sportCompetition .
+ ?sportCompetition :hasSport ?sport .
+ ?sport a :AthleticsSport .
+} 
+GROUP BY ?athlete 
+HAVING(COUNT(?sportCompetition) > 1)

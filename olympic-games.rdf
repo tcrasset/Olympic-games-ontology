@@ -1,0 +1,1268 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#"
+     xml:base="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedFirstPlaceTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedFirstPlaceTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:comment>A SportCompetition has awarded an Athlete the title of first place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedSecondPlaceTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedSecondPlaceTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSecondPlaceWinnerOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:comment>A SportCompetition has awarded an Athlete the title of first place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedThirdPlaceTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasAwardedThirdPlaceTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isThirdPlaceWinnerOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:comment>A SportCompetition has awarded an Athlete the title of third place.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:comment>A SportCompetition has Athletes that compete in it.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:comment>A SportCompetition is hosted by a kind of OlympicGame</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <rdfs:comment>A MultiRoundCompetition has Rounds that are played as part of it</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:comment>A SportCompetition has a Sport that is played in that competition
+Ex: Tennis</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <rdfs:comment>A MultiStageCompetition has instances of Stage as competition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasUnitCompetition -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasUnitCompetition">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isUnitCompetitionOf"/>
+        <rdfs:comment>A Round or a Stage has UnitCompetitions as part of it.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>An Athlete competes in a kind of SportCompetition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isFirstPlaceWinnerOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>An Athlete wins first place in a SportCompetition.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>An OlympicGame is host to a kind of SportCompetition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:comment>A Sport is played by an Athlete</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
+        <rdfs:comment>A round is part of a MultiRoundCompetition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSecondPlaceWinnerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSecondPlaceWinnerOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>An Athlete wins second place in a SportCompetition.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isSportOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>A Sport is played in a SportCompetition.
+Ex: Men&apos;s Singles Tennis XXX Olympiad.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+        <rdfs:comment>A stage is part of a MultiStageCompetition</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isThirdPlaceWinnerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isThirdPlaceWinnerOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isCompetitorIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>An Athlete wins third place in a SportCompetition.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isUnitCompetitionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isUnitCompetitionOf">
+        <rdfs:comment>A UnitCompetition belongs to a Stage, a Round or is by itself.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#endsAtDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#endsAtDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Starting date of the Olympic game, in datetime format.
+Example: 2012-05-25T23:59:59</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBirthdate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBirthdate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Birth date of a person in datetime format
+Example: 2012-06-03T23:58:58</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBudgetOf -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasBudgetOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Total spending for the organisation of the Olympic game</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasEquipment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasEquipment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Equipment used for playing that particular Sport
+Example: racket and ball in Tennis</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasFirstName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Firstname of a person.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGender -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGender">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Gender of a person.
+Example: &quot;male&quot; or &quot;female&quot;</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGroupSetting -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasGroupSetting">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Group setting of the sport, either &apos;individual&apos; or &apos;collective&apos;
+Example:  100M race is individual, football match is collective</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Height of a person in cm.
+Example: 190</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasLastName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasLastName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Last name of a person.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNationality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNationality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfPlayers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfPlayers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Number of players/competitors competing in a typical competition of that sport.
+Example: 22</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfVisitors -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasNumberOfVisitors">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Number of visitors during the OlympicGames in the hosting city</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRecords -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRecords">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The current record performances of that Sport
+Example: 100M race time by Usain Bolt at 9:58s</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRules -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRules">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Rules of the given Sport</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasWeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Weight of a person in kg.
+Example: 85</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedInCity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isPlayedInCity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>City in which the Olympic Games are held:
+Example: Rio de Janeiro in 2012</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#startsAtDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#startsAtDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Starting date of the Olympic game, in datetime format.
+Example: 2012-05-08T23:59:59</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An athlete is a person who practices some sport(s).
+Example: the tennis player Rafael Nadal.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:comment>Athletics sport is the sport of competing in track and field events, including running races and various competitions in jumping and throwing.
+Example: 100M, 400M, Hammer Throw, High Jump.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:comment>A ball sport is any form of sport which features a ball as part of play.
+Example: football, cricket, baseball, basketball.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:comment>A combat sport is a competitive contact sport that usually involves one-on-one combat.
+Example:  boxing, wrestling, fencing, savate.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A competition that incorporates a number of different sports, that is at least 2.
+Example: Athletics competition.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasRound"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A multi-round competition is a competition organised as a sequence of rounds where the winner advances and the loser gets eliminated.
+Example: the Wimbledon tennis tournament.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiSport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiSport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:comment>A multisport is a sport in which athletes compete in multiple athletic disciplines.
+Example: Triathlon (running, swimming, cycling)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasStage"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Multi-stage Competition is a competition that is organised as a set of stages.
+Example: the Football World Cup.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isHostOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>The Olympic Games are an international sporting event in which thousands of athletes from around the world participate in a variety of competitions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isRoundOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A round is one or more competitions that is part of a Multi-Round Competition.
+Example: first round of Wimbledon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport">
+        <rdfs:comment>A sport is a phyisical activity in which an individual or team competes against another or others for entertainment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasCompetitor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasHost"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasSport"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A sport competition is a competitive sporting event.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#hasUnitCompetition"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#isStageOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A stage is one or more competitions part of a MultiStageCompetition where the N best teams/players only advance in the competition.
+Example: pooling stage of Football World Cup</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WinterGame"/>
+        <rdfs:comment>Summer Game is a kind of Olympic Game consisting only of 
+summer sports.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <rdfs:comment>A unit competition is the unit of competition defined by a competition discipline rules. 
+Example: a tennis match or a 100m race.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+        <rdfs:comment>A water sport is a sport happening in or involving water.
+Example: kanoe, sailing, diving</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WinterGame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WinterGame">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+        <rdfs:comment>Winter Game is a kind of Olympic Game consisting only of winter sports.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray">
+        <isCompetitorIn rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles"/>
+        <hasBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1987-05-15T00:00:00</hasBirthdate>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andy</hasFirstName>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</hasGender>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">191</hasHeight>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Murray</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GreatBritain</hasNationality>
+        <playsSport rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tennis</playsSport>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Biathlon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Biathlon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Boxing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Boxing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chad</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le Clos</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">South Africa</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Diving -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Diving">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Football -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Football">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GrégoryBaugé -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GrégoryBaugé">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grégory</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baugé</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">France</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HammerThrow -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HammerThrow">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HighJump -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HighJump">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JasonKenny -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JasonKenny">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jason</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kenny</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GreatBritain</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JuanMartinDelPotro -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JuanMartinDelPotro">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Juan Martin</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Del Potro</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Argentina</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Judo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Judo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame"/>
+        <endsAtDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-07-27T00:00:00</endsAtDate>
+        <hasBudgetOf rdf:datatype="http://www.w3.org/2001/XMLSchema#long">15280000000</hasBudgetOf>
+        <hasNumberOfVisitors rdf:datatype="http://www.w3.org/2001/XMLSchema#int">471000</hasNumberOfVisitors>
+        <isPlayedInCity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">London</isPlayedInCity>
+        <startsAtDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-12T00:00:00</startsAtDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MichaelPhelps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MichaelPhelps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <isCompetitorIn rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly"/>
+        <hasBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1985-03-30T00:00:00</hasBirthdate>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Michael</hasFirstName>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</hasGender>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">193</hasHeight>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phelps</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">US</hasNationality>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">88</hasWeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RafaelNadal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RafaelNadal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles"/>
+        <hasBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1986-06-03T00:00:00</hasBirthdate>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rafael</hasFirstName>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</hasGender>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">185</hasHeight>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nadal</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spain</hasNationality>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">85</hasWeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RioDeJaneiro2016 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RioDeJaneiro2016">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SummerGame"/>
+        <endsAtDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-21T23:59:59</endsAtDate>
+        <hasBudgetOf rdf:datatype="http://www.w3.org/2001/XMLSchema#long">13200000000</hasBudgetOf>
+        <hasNumberOfVisitors rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1170000</hasNumberOfVisitors>
+        <isPlayedInCity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rio De Janeiro</isPlayedInCity>
+        <startsAtDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-08-05T00:00:00</startsAtDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RogerFederer -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RogerFederer">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roger</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Federer</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Switzerland</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ShanePerkins -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ShanePerkins">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Cycling"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shane</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perkins</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Australia</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sochi2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sochi2014">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WinterGame"/>
+        <endsAtDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-23T00:00:00</endsAtDate>
+        <hasBudgetOf rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5100000000</hasBudgetOf>
+        <hasNumberOfVisitors rdf:datatype="http://www.w3.org/2001/XMLSchema#int">870000</hasNumberOfVisitors>
+        <isPlayedInCity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sochi</isPlayedInCity>
+        <startsAtDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-07T00:00:00</startsAtDate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Taekwondo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Taekwondo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#CombatSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport"/>
+        <hasEquipment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Racket</hasEquipment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Triathlon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Triathlon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <isCompetitorIn rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint"/>
+        <hasBirthdate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1986-08-21T00:00:00</hasBirthdate>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Usain</hasFirstName>
+        <hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Male</hasGender>
+        <hasHeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">195</hasHeight>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bolt</hasLastName>
+        <hasWeight rdf:datatype="http://www.w3.org/2001/XMLSchema#int">94</hasWeight>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Volleyball -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Volleyball">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#BallSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YevgenyKorotyshkin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YevgenyKorotyshkin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+        <playsSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly"/>
+        <hasFirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yevgeny</hasFirstName>
+        <hasLastName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Korotyshkin</hasLastName>
+        <hasNationality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Russia</hasNationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#WaterSport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AthleticsSport"/>
+        <hasGroupSetting rdf:datatype="http://www.w3.org/2001/XMLSchema#string">individual</hasGroupSetting>
+        <hasNumberOfPlayers rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</hasNumberOfPlayers>
+        <hasRecords rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Men: Usain Bolt 9.58s (2009)
+Women: Florence Griffith-Joyner 10.49s (1988)</hasRecords>
+        <hasRules rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The 100 metres, or 100-metre dash, is a sprint race in track and field competitions</hasRules>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+        <hasAwardedFirstPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MichaelPhelps"/>
+        <hasAwardedSecondPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ChadLeCLos"/>
+        <hasAwardedThirdPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#YevgenyKorotyshkin"/>
+        <hasHost rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012"/>
+        <hasSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+        <hasAwardedFirstPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt"/>
+        <hasHost rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012"/>
+        <hasSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        <isStageOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Cycling_Sprint_XXX_Olympiad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Cycling_Sprint_XXX_Olympiad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+        <hasAwardedFirstPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JasonKenny"/>
+        <hasAwardedSecondPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#GrégoryBaugé"/>
+        <hasAwardedThirdPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#ShanePerkins"/>
+        <hasHost rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
+        <hasAwardedFirstPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray"/>
+        <hasAwardedSecondPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RogerFederer"/>
+        <hasAwardedThirdPlaceTo rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#JuanMartinDelPotro"/>
+        <hasHost rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012"/>
+        <hasSport rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <isRoundOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <isRoundOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <isRoundOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <isRoundOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <isRoundOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round">
+        <rdf:type rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+        <isRoundOf rdf:resource="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#playsSport">
+        <rdfs:comment>An Athlete plays a Sport</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Athlete"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#OlympicGame"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sport"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#SportCompetition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Stage"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiDisciplineCompetition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiRoundCompetition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MultiStageCompetition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UnitCompetition"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#AndyMurray"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Biathlon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Boxing"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Diving"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Football"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HammerThrow"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#HighJump"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Judo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#London2012"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#MichaelPhelps"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RafaelNadal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#RioDeJaneiro2016"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Sochi2014"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Taekwondo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Tennis_Singles"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Triathlon"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#UsainBolt"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Volleyball"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Waterpolo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Butterfly"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#100M_Sprint"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Final_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_Heats_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal1_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Butterfly_Swimming_XXX_Olympiad_SemiFinal2_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_Final_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_Heats_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_QuarterFinal_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_100M_Race_XXX_Olympiad_SemiFinal_Stage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_16_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_32_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_64_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_Final_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_QuarterFinal_Round"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#Men&apos;s_Singles_Tennis_XXX_Olympiad_SemiFinal_Round"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

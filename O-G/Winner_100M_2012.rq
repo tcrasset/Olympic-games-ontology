@@ -5,5 +5,5 @@ SELECT ?athlete ?sportCompetition WHERE
 {
  ?sportCompetition :hasHost :London2012 .
  ?sportCompetition :hasAwardedFirstPlaceTo ?athlete .
-
+ ?sportCompetition :hasSport :100M_Sprint
 }

@@ -1,0 +1,11 @@
+PREFIX : <http://www.semanticweb.org/antoinelouis/ontologies/2019/4/olympic-games#>
+
+
+SELECT ?first ?second ?third WHERE
+{
+ ?sportCompetition :hasSport :200M_Sprint.
+ ?sportCompetition :hasHost :London2012.
+ ?sportCompetition :hasAwardedFirstPlaceTo ?first.
+ ?sportCompetition :hasAwardedSecondPlaceTo ?second.
+ ?sportCompetition :hasAwardedThirdPlaceTo ?third.
+}
